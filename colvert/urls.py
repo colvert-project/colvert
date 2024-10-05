@@ -1,4 +1,14 @@
 """
+Colvert - The Detection Use Case Management Tool
+Copyright (C) 2024  The Colvert Contributors (see README.md / colvert/settings.py)
+
+Licensed under the EUPL, Version 1.2 only (the "Licence");
+You may not use this work except in compliance with the Licence.
+You may obtain a copy of the Licence, available in the 23 official
+languages of the European Union, at:
+https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
+
+
 URL configuration for colvert project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -16,8 +26,9 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
 urlpatterns = [
+    path('', include('core.urls')),
     path("admin/", admin.site.urls),
 ]

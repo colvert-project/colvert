@@ -9,8 +9,9 @@ languages of the European Union, at:
 https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
 """
 
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.urls import path
+from . import views
 
-def signin(request):
-    return HttpResponse("Hello world!")
+urlpatterns = [
+    path('signin/', views.signin, name='signin'),
+]

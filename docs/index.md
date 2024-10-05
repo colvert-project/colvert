@@ -58,19 +58,20 @@ $ cd colvert
 ```
 For library update, run again commands above by replacing the Bootstrap / AdminLTE version to download.
 
-## Python Useful Commands
+## Package & Run
 
 _TODO_ pip freeze > requirements.txt
 
-## Django Useful Commands
-
 ```shell
+python manage.py migrate
 python manage.py runserver
 ```
 
 ## Git Useful Commands
 
-* To remove the last commit from git (files are **also deleted**!):
+IMPORTANT: Commands below come back to a full state, so files are ** deleted** and also **uncommited changes on versioned filesare lost**!
+
+* To remove the last commit from git ():
 ```shell
 git reset --hard HEAD^
 ```

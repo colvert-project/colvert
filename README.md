@@ -72,11 +72,17 @@ All change details are listed into _TODO_ [CHANGELOG.md](CHANGELOG.md).
 
 * styx0x6 <<https://github.com/styx0x6>>
 
+## Security
+
+_TODO_ Advisory
+
+_TODO_ SECURITY.md
+
 ## Licence
 
 **Colvert** - The Detection Use Case Management Tool
 
-Copyright &copy; 2024  **The Colvert Contributors** (see [README.md](README.md) / _TODO_ [const.py](const.py))
+Copyright &copy; 2024  **The Colvert Contributors** (see [README.md](README.md) / [colvert/settings.py](colvert/settings.py))
 
 Licensed under the EUPL, Version 1.2 only (the "Licence");
 You may not use this work except in compliance with the Licence.

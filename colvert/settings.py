@@ -35,7 +35,7 @@ SECRET_KEY = "django-insecure-@m)cs(idp(tvf_*aia)$i($xm%+(4g2@m6n+q-c!!c_3+r_d2b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -132,3 +132,28 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Colvert - Application constants
+
+APP_TECH_NAME = "colvert"
+APP_SHORT_NAME = "Colvert"
+APP_SUB_NAME = "The Detection Use Case Management Tool"
+APP_SHORT_DESC = "Manage your portfolio of detection use cases through their entire lifecycle."
+APP_LONG_DESC = "Manage the portfolio of detection use cases with the possibility to document and follow-up use cases development, improvement and implementation; testing status; risk coverage compared to well-known security threats based on multiple contextual data sources; related preventive controls; and instructions for analysts triage, qualification, and correlation as playbooks and Standard Operating Procedures (SOPs)."
+APP_CONTRIBUTORS = "styx0x6 <https://github.com/styx0x6>"
+APP_SPONSOR = "Maybe you"
+APP_LICENCE = "EUPL-1.2"
+APP_MAIL_CONTACT = "contact@colvert.io"
+APP_URL = "https://colvert.io"
+APP_URL_RELEASES = "https://github.com/colvert-project/colvert/releases"
+APP_URL_ROADMAP = "https://github.com/orgs/colvert-project/projects"
+APP_URL_COMMUNITY = "https://github.com/colvert-project/colvert/discussions"
+APP_URL_ISSUES = "https://github.com/colvert-project/colvert/issues"
+APP_URL_SECURITY = "https://github.com/colvert-project/colvert/security"
+APP_POWERED_BY = "Django+AdminLTE"
+APP_VERSION = "0.1.0"
+APP_YEARS = "2024"
+APP_VERSION_STRING = "%s/%s" % (APP_TECH_NAME, APP_VERSION)
+APP_COPYRIGHT_STRING = "Copyright (C) %s  %s. %s." % (APP_YEARS, APP_CONTRIBUTORS, APP_LICENCE)
+APP_COPYRIGHT_HTML = "Copyright &copy; %s %s. Licensed under the %s." % (APP_YEARS, APP_CONTRIBUTORS, APP_LICENCE)

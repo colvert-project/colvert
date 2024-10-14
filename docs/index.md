@@ -1,8 +1,19 @@
-# Home
+# Colvert CodeDoc
 
-Using **GitHub Codespaces** from scratch with ```colvert-project/colvert``` as ```origin/main``` remote repository. Some customization settled in addition:
-* Choose your preferred **color theme**.
+## General
+
+### GitHub Codespaces
+
+Using **GitHub Codespaces** from scratch with ```colvert-project/colvert``` as ```origin/main``` remote repository. Some customization settled in addition in VS Code:
+* Choose your preferred **color theme**;
 * Install **Python** (by Microsoft) extension.
+
+As reminder in **GitHub Codespaces**, saved states about:
+* **color theme**;
+* Opened tabs;
+are not guaranteed.
+
+No problem with files state.
 
 ## Setting Up Project
 
@@ -58,6 +69,10 @@ $ cd colvert
 ```
 For library update, run again commands above by replacing the Bootstrap / AdminLTE version to download.
 
+## Development
+
+* `master` branch for now.
+
 ## Package & Run
 
 _TODO_ pip freeze > requirements.txt
@@ -68,6 +83,11 @@ python manage.py runserver
 ```
 
 ## Git Useful Commands
+
+* Push **main** to **origin**:
+```shell
+git push origin main
+```
 
 IMPORTANT: Commands below come back to a full state, so files are ** deleted** and also **uncommited changes on versioned filesare lost**!
 

@@ -1,10 +1,7 @@
 # Colvert
 
-![Version 0.1.0](https://img.shields.io/badge/Version-0.1.0-chartreuse?logo=git&logoColor=white)
-[![Python 3.12+](https://img.shields.io/badge/Python-3.12+-blue?logo=python&logoColor=white&labelColor=3776ab&color=ffd43b)](https://www.python.org)
+[![Release](https://img.shields.io/badge/dynamic/json?logo=git&logoColor=white&color=blue&label=Release&query=tag_name&url=https%3A%2F%2Fapi.github.com%2Frepos%2Fcolvert-project%2Fcolvert%2Freleases%2Flatest)](https://github.com/colvert-project/colvert/releases/latest)
 [![Licence EUPL-1.2](https://img.shields.io/badge/Licence-EUPL--1.2-blue)](LICENCE)
-
-_TODO_ Check also with 3.10, 3.11, etc. (recents Python version)
 
 **Colvert** is a tool designed to manage your portfolio of _detection use cases_ through their entire lifecycle in the context of **Information Security Event Management**.
 
@@ -21,28 +18,32 @@ It is designed to be used in the context of the _Service Area_ **Information Sec
 > 
 > _**Outcome:**_ A portfolio of effective detection use cases that are relevant to the constituency is developed.
 
-### Features
+### Key Features
 
-In order to respond to the needs explained above, **Colvert** offers the following features:
+To respond to the needs explained above, **Colvert** offers the following key features:
 
-* _TODO_ - List features.
+* _TODO_ - List key features.
 
 ### Roadmap
 
-_TODO_ - Link to project.
-_TODO_ - Put list below in project.
-
 * For now, one **Colvert** instance is dedicated to one constituency. In the future, **Colvert** should be able to manage a relationship between detection use cases and multiple constituencies.
 * _TODO_ - Use cases that do not perform well, i.e., that have an unfavorable benefit/effort ratio, need to be improved, redefined, or abandoned. TODO Statistics follow-up?
+* _TODO_ Finish list
 
-### Architecture
+### Links
 
-**Colvert** is a web application written in **_Python_**, built on **_Django_** web framework using _SQLAlchemy_ for database and model management, some extensions for additional _Flask_ features, **_Bootstrap_** & **_jQuery_** for view and control parts._TODO_
+* **Website:** [colvert.io](https://colvert.io)
+* **Git Repository:** `git clone https://github.com/colvert-project/colvert.git`
+* **Last Release:** [colvert/releases/latest](https://github.com/colvert-project/colvert/releases/latest)
+* _TODO_ **Packages:** [colvert-project/packages](https://github.com/orgs/colvert-project/packages)
+* **Docker Registries:**
+    * **Docker Hub:** [`TODO`](https://hub.docker.com/r/TODO)
+    * **GitHub Container:** [`https://ghcr.io/TODO`](https://ghcr.io/TODO)
+* **Issues Tracker:** [colvert/issues](https://github.com/colvert-project/colvert/issues)
+* **Discussions:** [colvert-project/discussions](https://github.com/orgs/colvert-project/discussions)
+* **Documentation:** [docs.colvert.io](https://docs.colvert.io)
 
-_TODO_ - For all concern about software logic, please refer to the design documentation.
-See [DESIGN.md](DESIGN.md) for all technical details.
-
-_TODO_ - git clone doc
+Changelog details are available on the [releases](https://github.com/colvert-project/colvert/releases) page.
 
 ## Getting Started
 
@@ -52,25 +53,56 @@ how to run code, development and maintenance
 
 Needs a WSGI server
 
-## Software Lifecycle
+Docker install
 
-### Development
+_TODO_ Live demo website
+    
+* + Link in links
+* + Link in Intro
 
-* `master` branch
+### Architecture
 
-_TODO_ Dependencies badge out of date?
+[![Python 3.12+](https://img.shields.io/badge/Python-3.12+-blue?logo=python&logoColor=white&labelColor=3776ab&color=ffd43b)](https://www.python.org)
+[![Django 5.1](https://img.shields.io/badge/Django-5.1-white?logo=django&logoColor=white&labelColor=092e20)](https://www.djangoproject.com)
+([![Bootstrap 5](https://img.shields.io/badge/Bootstrap-5.3-white?logo=bootstrap&logoColor=white&labelColor=7952b3)](getbootstrap.com))
 
-### Design & Technicals
+AdminLTE
+
+**Colvert** is a web application written in **_Python_ 3**, built on **_Django_ 5** web framework with **_AdminLTE 4_** as **_Bootstrap_ 5** template for view and control parts.
+
+**_jQuery_** ._TODO_
+
+_TODO_ Check also with 3.10, 3.11, etc. (recents Python version)
+
+_TODO_ - For all concern about software logic, please refer to the design documentation.
+See [DESIGN.md](DESIGN.md) for all technical details.
+
+_TODO_ - git clone doc
+
+### Documentation
+
+[docs.colvert.io](https://docs.colvert.io)
+
+_TODO_ User doc.
+
+_TODO_ Dev. doc.
 
 _TODO_ [DESIGN.md](DESIGN.md)
 
-### Changelog
+* Software Lifecycle
+    * Design & Technicals
+    * CD/CI Ecosystem Status
+       * _TODO_ GitHub Status
+       * https://www.traviscistatus.com/
 
-All change details are listed into _TODO_ [CHANGELOG.md](CHANGELOG.md).
+_TODO_ Dependencies badge out of date?
 
-## Contributors
+_TODO_ NewReleases.io
 
-* styx0x6 <<https://github.com/styx0x6>>
+## Contact
+
+* Feel free to start a topic in discussions part: [colvert-project/discussions](https://github.com/orgs/colvert-project/discussions)
+* You can also contact project maintainers via mail: contact@colvert.io
 
 ## Security
 
@@ -78,7 +110,16 @@ _TODO_ Advisory
 
 _TODO_ SECURITY.md
 
+* **Security Policy:** [colvert/security/policy](https://github.com/colvert-project/colvert/security/policy)
+* **Security Advisories:** [colvert/security/advisories](https://github.com/colvert-project/colvert/security/advisories)
+
+## Contributors
+
+* styx0x6 <<https://github.com/styx0x6>>
+
 ## Licence
+
+[![Licence EUPL-1.2](https://img.shields.io/badge/Licence-EUPL--1.2-blue)](LICENCE)
 
 **Colvert** - The Detection Use Case Management Tool
 
@@ -95,6 +136,8 @@ https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
 
 [Colvert Logo](https://github.com/colvert-project/colvert/tree/main/rsc/logo) &copy; 2024 by [Colvert Project Team](https://github.com/colvert-project) is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1) <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="CC" width="16" height="16" /><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="BY" width="16" height="16" /><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="SA" width="16" height="16" />
 
+![CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/80x15.png)
+
 ## Credits
 
-Credits are listed in _TODO_ [DESIGN.md](DESIGN.md).
+Credits are listed in [documentation](https://docs.colvert.io). _TODO_ Set exact link.

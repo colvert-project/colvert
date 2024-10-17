@@ -1,8 +1,6 @@
-# Colvert CodeDoc
+# General "CodeDoc"
 
-## General
-
-### GitHub Codespaces
+## GitHub Codespaces
 
 Using **GitHub Codespaces** from scratch with ```colvert-project/colvert``` as ```origin/main``` remote repository. Some customization settled in addition in VS Code:
 * Choose your preferred **color theme**;
@@ -15,9 +13,9 @@ are not guaranteed.
 
 No problem with files state.
 
-## Setting Up Project
+# Setting Up Project
 
-### Packages Installation
+## Packages Installation
 
 ```shell
 /workspaces/colvert (main) $ python --version
@@ -34,7 +32,7 @@ pip 24.2 from /usr/local/python/3.12.1/lib/python3.12/site-packages/pip (python 
  5.1.1
 ```
 
-### Django Project Initialization
+## Django Project Initialization
 
 Within the root repository folder ```/workspaces/colvert```.
 
@@ -44,7 +42,7 @@ Within the root repository folder ```/workspaces/colvert```.
 ```
 Hint: <https://automationpanda.com/2018/02/06/starting-a-django-project-in-an-existing-directory/>
 
-### Installing & Updating Additional Libraries
+## Installing & Updating Additional Libraries
 
 ```shell
 /workspaces/colvert (main) $ npm --version
@@ -69,11 +67,11 @@ $ cd colvert
 ```
 For library update, run again commands above by replacing the Bootstrap / AdminLTE version to download.
 
-## Development
+# Development
 
 * `master` branch for now.
 
-## Package & Run
+# Package & Run
 
 _TODO_ pip freeze > requirements.txt
 
@@ -82,7 +80,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-## Colvert Documentation
+# Colvert Documentation
 
 It uses **Sphinx** with a third-party GitHub workflow in `.github/workflows/build-docs.yml`
 

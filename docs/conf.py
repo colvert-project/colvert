@@ -30,8 +30,8 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html
 project = 'Colvert'
 author = 'The Colvert Contributors'
 copyright = '2024-%Y, ' + author
-version = '0.1'
-release = '0.1.0'
+version = '0.1' #TODO - Get from ?
+release = '0.1.0' #TODO - Get from ?
 
 
 # -- General configuration ---------------------------------------------------
@@ -48,16 +48,20 @@ numfig = True
 
 #language = 'en'
 
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+
 source_suffix = {
+    '.rst': 'restructuredtext',
     '.md': 'markdown',
 }
 
 html_theme = 'sphinx_rtd_theme'
 html_title = 'Colvert Documentation'
-html_baseurl = 'docs.colvert.io'
+html_baseurl = 'docs.colvert.io' #TODO - Get from CNAME
 # Copy of colvert_square_192px.png
 html_logo = 'static/logo.png'
 # Copy of colvert_square_16px.png
 html_favicon = 'static/favicon.png'
 #html_output_encoding = 'utf-8'
 html_static_path = ['static']
+html_show_sourcelink = False

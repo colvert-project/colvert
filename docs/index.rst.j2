@@ -1,0 +1,42 @@
+Welcome to Colvert's documentation!
+===================================
+
+TODO
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Usage Guides
+
+   Getting-started.md
+
+The following section contains documentation from installed connectors.
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Connectors Documentation
+{% for connector_doc in connector_docs %}
+   {{ connector_doc }}
+{% endfor %}
+
+The following section contains information intended to help developers
+understand the inner workings of the Colvert tool and Colvert connectors.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Developer Information
+
+   General.md
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Core System API
+
+   _generated/modules
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

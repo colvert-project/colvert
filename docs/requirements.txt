@@ -1,0 +1,4 @@
+# Markdown parser for Sphinx
+myst-parser
+#Sphinx's Read the Docs Theme
+sphinx_rtd_theme

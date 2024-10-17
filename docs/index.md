@@ -6,7 +6,7 @@
 
 Using **GitHub Codespaces** from scratch with ```colvert-project/colvert``` as ```origin/main``` remote repository. Some customization settled in addition in VS Code:
 * Choose your preferred **color theme**;
-* Install **Python** (by Microsoft) extension.
+* Install **Python** / **Python Debugger** / **Pylance** (by Microsoft) and **GitHub Actions** (by GitHub) extensions.
 
 As reminder in **GitHub Codespaces**, saved states about:
 * **color theme**;
@@ -82,20 +82,18 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-## Git Useful Commands
+## Colvert Documentation
 
-* Push **main** to **origin**:
-```shell
-git push origin main
-```
+It uses **Sphinx** with a third-party GitHub workflow in `.github/workflows/build-docs.yml`
 
-IMPORTANT: Commands below come back to a full state, so files are ** deleted** and also **uncommited changes on versioned filesare lost**!
+|`docs/conf.py`|https://www.sphinx-doc.org/en/master/usage/configuration.html|
+|`docs/requirements.txt`|pip packages needed by Sphinx|
+## Credits
 
-* To remove the last commit from git ():
-```shell
-git reset --hard HEAD^
-```
-* To remove multiple commits from the top (e.g. top 3):
-```shell
-git reset --hard HEAD~3
-```
+Python
+Django
+Bootstrap
+AdminLTE
+
+Sphinx
+Sphinx workflow

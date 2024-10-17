@@ -1,6 +1,7 @@
 # Colvert
 
 [![Release](https://img.shields.io/badge/dynamic/json?logo=git&logoColor=white&color=blue&label=Release&query=tag_name&url=https%3A%2F%2Fapi.github.com%2Frepos%2Fcolvert-project%2Fcolvert%2Freleases%2Flatest)](https://github.com/colvert-project/colvert/releases/latest)
+[![Documentation](https://img.shields.io/badge/Docs-docs.colvert.io-blue?logo=readthedocs&logoColor=white)](https://docs.colvert.io)
 [![Licence EUPL-1.2](https://img.shields.io/badge/Licence-EUPL--1.2-blue)](LICENCE)
 
 **Colvert** is a tool designed to manage your portfolio of _detection use cases_ through their entire lifecycle in the context of **Information Security Event Management**.
@@ -115,7 +116,13 @@ _TODO_ SECURITY.md
 
 ## Contributors
 
-* styx0x6 <<https://github.com/styx0x6>>
+### Project Maintainers
+
+* **styx0x6** <<https://github.com/styx0x6>>
+
+### Contributors
+
+[![styx0x6](https://github.com/styx0x6.png?size=40)](https://github.com/styx0x6)
 
 ## Licence
 

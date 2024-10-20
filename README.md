@@ -31,6 +31,10 @@ To respond to the needs explained above, **Colvert** offers the following key fe
 * _TODO_ - Use cases that do not perform well, i.e., that have an unfavorable benefit/effort ratio, need to be improved, redefined, or abandoned. TODO Statistics follow-up?
 * _TODO_ Finish list
 
+### Why Colvert?
+
+**D**etection **U**se **C**ase >>> **DUC** >>> DUCK >>> **Colvert** (Mallard duck in French). That's it.
+
 ### Links
 
 * **Website:** [colvert.io](https://colvert.io)
@@ -116,11 +120,15 @@ _TODO_ SECURITY.md
 
 ## Contributors
 
-### Project Maintainers
+### Author & Project Maintainer
 
 * **styx0x6** <<https://github.com/styx0x6>>
 
-### Contributors
+### Contributing Developers
+
+[![styx0x6](https://github.com/styx0x6.png?size=40)](https://github.com/styx0x6)
+
+### Sponsors
 
 [![styx0x6](https://github.com/styx0x6.png?size=40)](https://github.com/styx0x6)
 

@@ -32,11 +32,6 @@ sys.path.insert(0, os.path.abspath(colvert_docs_root_reldir))
 sys.path.append(os.path.abspath(colvert_main_reldir))
 sys.path.append(os.path.abspath(colvert_core_reldir))
 
-# Directory name in colvert which acts as connectors repository
-COLVERT_CONNECTORS_REPO_NAME = 'connectors'
-# Directory name in connector to pull documentation from
-CONNECTOR_DOCS_DIR_NAME = 'docs'
-
 # -- Prework run -------------------------------------------------------------
 
 from shutil import copytree
@@ -46,6 +41,11 @@ from jinja2 import Environment, FileSystemLoader
 #TODO sphinx-apidoc
 
 # => Import documentation from connectors
+
+# Directory name in colvert which acts as connectors repository
+COLVERT_CONNECTORS_REPO_NAME = 'connectors'
+# Directory name in connector to pull documentation from
+CONNECTOR_DOCS_DIR_NAME = 'docs'
 
 colvert_docs_connectors_abspath = os.path.abspath(os.path.join(colvert_docs_root_reldir, COLVERT_CONNECTORS_REPO_NAME))
 colvert_connectors_repo_abspath = os.path.abspath(os.path.join(colvert_root_reldir, COLVERT_CONNECTORS_REPO_NAME))
@@ -80,12 +80,13 @@ with open(os.path.join(colvert_docs_root_reldir, 'index.rst'), 'w') as f:
 # -- Project information -----------------------------------------------------
 
 # Get project, author, version and release from colvert's settings.py file
+from colvert import settings
 
-project = 'Colvert' #TODO - Get from APP_SHORT_NAME
-author = 'The Colvert Contributors' #TODO - Get from APP_CONTRIBUTORS
-copyright = 'TODO' #TODO - Get from '%s, %s. %s. %s. %s' % (APP_YEARS, author, APP_CREATED_BY, APP_SPONSORED_BY, APP_POWERED_BY)
-version = '0.1' #TODO - Get from APP_VERSION
-release = '0.1.0' #TODO - Get from APP_VERSION
+project = settings.APP_SHORT_NAME
+author = settings.APP_CONTRIBUTORS
+copyright = '%s, %s. %s. %s. %s' % (settings.APP_YEARS, author, settings.APP_CREATED_BY, settings.APP_SPONSORED_BY, settings.APP_POWERED_BY)
+version = '.'.join(settings.APP_VERSION.split('.')[:2])
+release = settings.APP_VERSION
 
 # -- General configuration ---------------------------------------------------
 
@@ -111,7 +112,8 @@ source_suffix = {
 html_theme = 'sphinx_rtd_theme'
 html_title = 'Colvert Documentation'
 # Get html_baseurl from the "file variable" CNAME
-html_baseurl = 'docs.colvert.io' #TODO - Get from CNAME
+with open(colvert_docs_root_reldir + '/' + 'CNAME') as f:
+    html_baseurl = f.readline().strip('\n')
 # Copy of colvert_square_192px.png
 html_logo = 'static/logo.png'
 # Copy of colvert_square_16px.png

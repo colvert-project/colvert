@@ -28,7 +28,10 @@ colvert_root_reldir ='..'
 colvert_main_reldir ='../colvert'
 colvert_core_reldir ='../core'
 
-sys.path.insert(0, os.path.abspath(colvert_docs_root_reldir, colvert_main_reldir, colvert_core_reldir))
+sys.path.insert(0,
+                os.path.abspath(colvert_docs_root_reldir),
+                os.path.abspath(colvert_main_reldir),
+                os.path.abspath(colvert_core_reldir))
 
 # Directory name in colvert which acts as connectors repository
 COLVERT_CONNECTORS_REPO_NAME = 'connectors'

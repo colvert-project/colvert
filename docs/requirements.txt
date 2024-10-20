@@ -1,3 +1,5 @@
+# Jinja2 parser
+jinja2
 # Markdown parser for Sphinx
 myst-parser
 #Sphinx's Read the Docs Theme

@@ -4,7 +4,7 @@
 [![Documentation](https://img.shields.io/badge/Docs-docs.colvert.io-blue?logo=readthedocs&logoColor=white)](https://docs.colvert.io)
 [![Licence EUPL-1.2](https://img.shields.io/badge/Licence-EUPL--1.2-blue)](LICENCE)
 
-**Colvert** is a tool designed to manage your portfolio of _detection use cases_ through their entire lifecycle in the context of **Information Security Event Management**.
+**Colvert** is a tool made for cybersecurity teams (CSIRTs / SOCs) and designed to manage their portfolio of _detection use cases_ through their entire lifecycle in the context of **Information Security Event Management**.
 
 ## About
 
@@ -23,100 +23,58 @@ It is designed to be used in the context of the _Service Area_ **Information Sec
 
 To respond to the needs explained above, **Colvert** offers the following key features:
 
-* _TODO_ - List key features.
+* **Dashboards**
+* **Detection Use Cases Management**
+  * **Add / Modify / Delete** Detection Use Cases
+    * From idea to organized and prioritized development
+    * Map local ideas and needs to those provided by connectors
+    * _Synchronize_ detection use cases with providers catalogs
+    *  on use cases
+    * Use cases _scoring_ for priorization
+    * Add full rich-text documentation and additional _more-valued data fields_ as:
+      * _Runbooks_ for security analysts
+      * Implemented queries
+    * Add _Custom Lists_ (Whitelists, Thresholds, Scope, etc.)
+    * Attach external documents or reference to
+    * Development status
 
 ### Roadmap
 
+* Scoring System
+* Connectors
+* Source Logs
 * For now, one **Colvert** instance is dedicated to one constituency. In the future, **Colvert** should be able to manage a relationship between detection use cases and multiple constituencies.
-* _TODO_ - Use cases that do not perform well, i.e., that have an unfavorable benefit/effort ratio, need to be improved, redefined, or abandoned. TODO Statistics follow-up?
-* _TODO_ Finish list
+* Metrics about use cases that do not perform well, i.e., that have an unfavorable benefit/effort ratio, need to be improved, redefined, or abandoned.
 
 ### Why Colvert?
 
-**D**etection **U**se **C**ase >>> **DUC** >>> DUCK >>> **Colvert** (Mallard duck in French). That's it.
+**D**etection **U**se **C**ase >>> **DUC** >>> DUCK >>> **Colvert** (Mallard duck in French).
+
+That's it.
 
 ### Links
 
 * **Website:** [colvert.io](https://colvert.io)
+* **Documentation:** [docs.colvert.io](https://docs.colvert.io)
 * **Git Repository:** `git clone https://github.com/colvert-project/colvert.git`
 * **Last Release:** [colvert/releases/latest](https://github.com/colvert-project/colvert/releases/latest)
-* _TODO_ **Packages:** [colvert-project/packages](https://github.com/orgs/colvert-project/packages)
-* **Docker Registries:**
-    * **Docker Hub:** [`TODO`](https://hub.docker.com/r/TODO)
-    * **GitHub Container:** [`https://ghcr.io/TODO`](https://ghcr.io/TODO)
-* **Issues Tracker:** [colvert/issues](https://github.com/colvert-project/colvert/issues)
+* **Packages:** [colvert-project/packages](https://github.com/orgs/colvert-project/packages)
 * **Discussions:** [colvert-project/discussions](https://github.com/orgs/colvert-project/discussions)
-* **Documentation:** [docs.colvert.io](https://docs.colvert.io)
+* **Issues Tracker:** [colvert/issues](https://github.com/colvert-project/colvert/issues)
 
 Changelog details are available on the [releases](https://github.com/colvert-project/colvert/releases) page.
 
-## Getting Started
+All topics about installation / deployment / usage / design / architecture / etc. can be found in [**documentation**](https://docs.colvert.io).
 
-_TODO_
-Deploy
-how to run code, development and maintenance
+## Security
 
-Needs a WSGI server
-
-Docker install
-
-_TODO_ Live demo website
-    
-* + Link in links
-* + Link in Intro
-
-### Architecture
-
-[![Python 3.12+](https://img.shields.io/badge/Python-3.12+-blue?logo=python&logoColor=white&labelColor=3776ab&color=ffd43b)](https://www.python.org)
-[![Django 5.1](https://img.shields.io/badge/Django-5.1-white?logo=django&logoColor=white&labelColor=092e20)](https://www.djangoproject.com)
-([![Bootstrap 5](https://img.shields.io/badge/Bootstrap-5.3-white?logo=bootstrap&logoColor=white&labelColor=7952b3)](getbootstrap.com))
-
-AdminLTE
-
-**Colvert** is a web application written in **_Python_ 3**, built on **_Django_ 5** web framework with **_AdminLTE 4_** as **_Bootstrap_ 5** template for view and control parts.
-
-**_jQuery_** ._TODO_
-
-_TODO_ Check also with 3.10, 3.11, etc. (recents Python version)
-
-_TODO_ - For all concern about software logic, please refer to the design documentation.
-See [DESIGN.md](DESIGN.md) for all technical details.
-
-_TODO_ - git clone doc
-
-### Documentation
-
-[docs.colvert.io](https://docs.colvert.io)
-
-_TODO_ User doc.
-
-_TODO_ Dev. doc.
-
-_TODO_ [DESIGN.md](DESIGN.md)
-
-* Software Lifecycle
-    * Design & Technicals
-    * CD/CI Ecosystem Status
-       * _TODO_ GitHub Status
-       * https://www.traviscistatus.com/
-
-_TODO_ Dependencies badge out of date?
-
-_TODO_ NewReleases.io
+* **Security Policy:** [colvert/security/policy](https://github.com/colvert-project/colvert/security/policy)
+* **Security Advisories:** [colvert/security/advisories](https://github.com/colvert-project/colvert/security/advisories)
 
 ## Contact
 
 * Feel free to start a topic in discussions part: [colvert-project/discussions](https://github.com/orgs/colvert-project/discussions)
 * You can also contact project maintainers via mail: contact@colvert.io
-
-## Security
-
-_TODO_ Advisory
-
-_TODO_ SECURITY.md
-
-* **Security Policy:** [colvert/security/policy](https://github.com/colvert-project/colvert/security/policy)
-* **Security Advisories:** [colvert/security/advisories](https://github.com/colvert-project/colvert/security/advisories)
 
 ## Contributors
 
@@ -155,4 +113,4 @@ https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
 
 ## Credits
 
-Credits are listed in [documentation](https://docs.colvert.io). _TODO_ Set exact link.
+Credits are listed in [docs/Credits](https://docs.colvert.io/Credits.html).

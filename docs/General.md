@@ -19,12 +19,19 @@ No problem with files state.
 
 ### Documentation Build
 
-It uses **Sphinx** with a third-party GitHub workflow in `.github/workflows/build-docs.yml`
+It uses **Sphinx** with a third-party GitHub workflow in `.github/workflows/build-docs.yml` to trigger build on `git push` action. It uses the third-party action [`sphinx-notes/pages@v3`](https://github.com/sphinx-notes/pages).
 
-|`docs/conf.py`|https://www.sphinx-doc.org/en/master/usage/configuration.html|
-|`docs/requirements.txt`|pip packages needed by Sphinx|
+|File                   |Usage                                                                                                                    |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------|
+|`static/`              |Classic favicon, logo, and other static file to serve.                                                                   |
+|`docs/requirements.txt`|pip packages needed by Sphinx to build documentation. Commented.                                                         |
+|`docs/conf.py`         |Sphinx configuration. Commented.                                                                                         |
+|`CNAME`                |Define the base URL for documentation. Not used by GitHub as built using a workflow, but used by `conf.py`.              |
+|`index.rst.j2`         |Jinja2 parsed first template (`conf.py`) to load docs from connectors, then Sphinx index using *reStructuredText* format.|
+|`*.md`                 |All others documentation files in Markdown format.                                                                       |
 
-_TODO_ - To Finish
+Help links:
+* Sphinx docs for `conf.py`: <https://www.sphinx-doc.org/en/master/usage/configuration.html>
 
 # Architecture
 
@@ -35,8 +42,6 @@ _TODO_ - To Finish
 AdminLTE
 
 **Colvert** is a web application written in **_Python_ 3**, built on **_Django_ 5** web framework with **_AdminLTE 4_** as **_Bootstrap_ 5** template for view and control parts.
-
-
 
 ## Project Setup
 
@@ -55,6 +60,12 @@ pip 24.2 from /usr/local/python/3.12.1/lib/python3.12/site-packages/pip (python 
  Successfully installed Django-5.1.1 asgiref-3.8.1 sqlparse-0.5.1
  /workspaces/colvert (main) $ django-admin --version
  5.1.1
+```
+
+```shell
+ /workspaces/colvert (main) $ python -m pip install WhiteNoise
+ ...
+ Successfully installed whitenoise-6.7.0
 ```
 
 ### Django Project Initialization
@@ -96,11 +107,19 @@ For future library update, run again commands above by replacing the Bootstrap /
 
 * `main` branch for now.
 
+### Docstrings
+
+**Docstrings** is done using *reStructuredText* formatting.
+
 ### Packaging & Run
 
-_TODO_ pip freeze > requirements.txt
+Update `requirements.txt`
 
 ```shell
 python manage.py migrate
 python manage.py runserver
 ```
+
+TODO - Collect staticfiles
+
+TODO - Merge migrations

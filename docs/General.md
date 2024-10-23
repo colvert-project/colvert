@@ -1,21 +1,46 @@
-# General "CodeDoc"
+# General
 
-## GitHub Codespaces
+This **Developer Documentation** can be refered as **"CodeDoc"**.
 
-Using **GitHub Codespaces** from scratch with ```colvert-project/colvert``` as ```origin/main``` remote repository. Some customization settled in addition in VS Code:
+## Development Environment
+
+### GitHub Codespaces
+
+Create a personal **GitHub Codespaces** from scratch with ```colvert-project/colvert``` and ```origin/main``` remote repository. Some customization can be settled in addition in Visual Studio Code:
 * Choose your preferred **color theme**;
 * Install **Python** / **Python Debugger** / **Pylance** (by Microsoft) and **GitHub Actions** (by GitHub) extensions.
 
-As reminder in **GitHub Codespaces**, saved states about:
+As reminder, in **GitHub Codespaces** saved states about:
 * **color theme**;
 * Opened tabs;
 are not guaranteed.
 
 No problem with files state.
 
-# Setting Up Project
+### Documentation Build
 
-## Packages Installation
+It uses **Sphinx** with a third-party GitHub workflow in `.github/workflows/build-docs.yml`
+
+|`docs/conf.py`|https://www.sphinx-doc.org/en/master/usage/configuration.html|
+|`docs/requirements.txt`|pip packages needed by Sphinx|
+
+_TODO_ - To Finish
+
+# Architecture
+
+[![Python 3.12+](https://img.shields.io/badge/Python-3.12+-blue?logo=python&logoColor=white&labelColor=3776ab&color=ffd43b)](https://www.python.org)
+[![Django 5.1](https://img.shields.io/badge/Django-5.1-white?logo=django&logoColor=white&labelColor=092e20)](https://www.djangoproject.com)
+([![Bootstrap 5](https://img.shields.io/badge/Bootstrap-5.3-white?logo=bootstrap&logoColor=white&labelColor=7952b3)](getbootstrap.com))
+
+AdminLTE
+
+**Colvert** is a web application written in **_Python_ 3**, built on **_Django_ 5** web framework with **_AdminLTE 4_** as **_Bootstrap_ 5** template for view and control parts.
+
+
+
+## Project Setup
+
+### Packages Installation
 
 ```shell
 /workspaces/colvert (main) $ python --version
@@ -32,7 +57,7 @@ pip 24.2 from /usr/local/python/3.12.1/lib/python3.12/site-packages/pip (python 
  5.1.1
 ```
 
-## Django Project Initialization
+### Django Project Initialization
 
 Within the root repository folder ```/workspaces/colvert```.
 
@@ -42,7 +67,7 @@ Within the root repository folder ```/workspaces/colvert```.
 ```
 Hint: <https://automationpanda.com/2018/02/06/starting-a-django-project-in-an-existing-directory/>
 
-## Installing & Updating Additional Libraries
+## Additional Libraries Installation
 
 ```shell
 /workspaces/colvert (main) $ npm --version
@@ -55,7 +80,7 @@ Hint: <https://automationpanda.com/2018/02/06/starting-a-django-project-in-an-ex
 
 <https://adminlte.io/docs/>
 
-Install Bootstrap and AdminLTE in minimal version:
+IBootstrap and AdminLTE installed in minimal version:
 ```shell
 $ cd /workspaces
 
@@ -65,13 +90,13 @@ $ cp node_modules/admin-lte/dist/js/adminlte.min.js colvert/core/static/js/admin
 
 $ cd colvert
 ```
-For library update, run again commands above by replacing the Bootstrap / AdminLTE version to download.
+For future library update, run again commands above by replacing the Bootstrap / AdminLTE version to download.
 
-# Development
+## Development
 
-* `master` branch for now.
+* `main` branch for now.
 
-# Package & Run
+### Packaging & Run
 
 _TODO_ pip freeze > requirements.txt
 
@@ -79,19 +104,3 @@ _TODO_ pip freeze > requirements.txt
 python manage.py migrate
 python manage.py runserver
 ```
-
-# Colvert Documentation
-
-It uses **Sphinx** with a third-party GitHub workflow in `.github/workflows/build-docs.yml`
-
-|`docs/conf.py`|https://www.sphinx-doc.org/en/master/usage/configuration.html|
-|`docs/requirements.txt`|pip packages needed by Sphinx|
-## Credits
-
-Python
-Django
-Bootstrap
-AdminLTE
-
-Sphinx
-Sphinx workflow

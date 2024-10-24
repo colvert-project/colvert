@@ -165,3 +165,7 @@ APP_COPYRIGHT_HTML = "Copyright &copy; %s %s. Licensed under the %s." % (APP_YEA
 APP_CREATED_BY = "Created by %s" % (APP_AUTHORS)
 APP_SPONSORED_BY = "Sponsored by %s" % (APP_SPONSORS)
 APP_POWERED_BY = "Powered by %s" % (APP_EMPOWERING_TECH)
+
+# Colvert - Static String Constants
+
+STR_DEBUG = "DEBUG"

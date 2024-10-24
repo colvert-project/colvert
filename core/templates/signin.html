@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block b_head %}
+		<link rel="stylesheet" href="{% static 'css/signin.style.css' %}">
+{% endblock %}
+
+{% block b_body_attributes %} class="text-center"{% endblock %}
+
+{% block b_main %}
+		<main class="form-signin">
+			<form action="{{ pl_signin_base_route }}" method="POST">
+				<img class="mb-4" src="{% static 'img/colvert_square_180px.png' %}" alt="Colvert Logo" width="72" height="72">
+				<h1 class="h3 mb-3 fw-normal">Sign in <b>{{ pl_signin_short_name }}</b></h1>
+				{% if pl_signin_msg %}
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					{{ pl_signin_msg }}
+				</div>
+				{% endif %}
+				<div class="form-floating">
+					<input type="text" class="form-control" id="floatingInput" name="username" placeholder="Username">
+					<label for="floatingInput">Username</label>
+				</div>
+				<div class="form-floating">
+					<input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+					<label for="floatingPassword">Password</label>
+				</div>
+				<div class="checkbox mb-3">
+					<label>
+						<input type="checkbox" value="remember-me"> Remember me
+					</label>
+				</div>
+				<button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+				<p class="mt-5 mb-3 text-muted small">{{ pl_signin_footer|safe }}</p>
+			</form>
+		</main>
+{% endblock %}

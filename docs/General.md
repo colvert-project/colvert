@@ -6,16 +6,16 @@ This **Developer Documentation** can be refered as **"CodeDoc"**.
 
 ### GitHub Codespaces
 
-Create a personal **GitHub Codespaces** from scratch with ```colvert-project/colvert``` and ```origin/main``` remote repository. Some customization can be settled in addition in Visual Studio Code:
-* Choose your preferred **color theme**;
-* Install **Python** / **Python Debugger** / **Pylance** (by Microsoft) and **GitHub Actions** (by GitHub) extensions.
+Create a personal **GitHub Codespaces** from scratch with ```colvert-project/colvert``` and ```origin/main``` remote repository.
 
-As reminder, in **GitHub Codespaces** saved states about:
-* **color theme**;
-* Opened tabs;
-are not guaranteed.
+Some Visual Studio Code extensions can be settled in addition:
 
-No problem with files state.
+* Python
+* Python Debugger
+* Pylance
+* GitHub Actions
+
+As reminder, in **GitHub Codespaces** states concerning opened tabs and settings (like color theme, etc.) are not saved until you set _Backup and Sync Settings_.
 
 ### Documentation Build
 
@@ -27,10 +27,11 @@ It uses **Sphinx** with a third-party GitHub workflow in `.github/workflows/buil
 |`docs/requirements.txt`|pip packages needed by Sphinx to build documentation. Commented.                                                         |
 |`docs/conf.py`         |Sphinx configuration. Commented.                                                                                         |
 |`CNAME`                |Define the base URL for documentation. Not used by GitHub as built using a workflow, but used by `conf.py`.              |
-|`index.rst.j2`         |Jinja2 parsed first template (`conf.py`) to load docs from connectors, then Sphinx index using *reStructuredText* format.|
+|`index.rst.j2`         |Jinja2 parsed first template (`conf.py`) to load docs from connectors, then Sphinx index using _reStructuredText_ format.|
 |`*.md`                 |All others documentation files in Markdown format.                                                                       |
 
 Help links:
+
 * Sphinx docs for `conf.py`: <https://www.sphinx-doc.org/en/master/usage/configuration.html>
 
 # Architecture
@@ -76,6 +77,7 @@ Within the root repository folder ```/workspaces/colvert```.
 /workspaces/colvert (main) $ django-admin startproject colvert .
 /workspaces/colvert (main) $ python manage.py startapp core
 ```
+
 Hint: <https://automationpanda.com/2018/02/06/starting-a-django-project-in-an-existing-directory/>
 
 ## Additional Libraries Installation
@@ -91,16 +93,18 @@ Hint: <https://automationpanda.com/2018/02/06/starting-a-django-project-in-an-ex
 
 <https://adminlte.io/docs/>
 
-IBootstrap and AdminLTE installed in minimal version:
+Bootstrap and AdminLTE installed in minimal version:
+
 ```shell
-$ cd /workspaces
+/workspaces/colvert (main) $ cd /workspaces
 
-$ npm install admin-lte@^4.0.0-beta2
-$ cp node_modules/admin-lte/dist/css/adminlte.min.css colvert/core/static/css/adminlte.min.css
-$ cp node_modules/admin-lte/dist/js/adminlte.min.js colvert/core/static/js/adminlte.min.js
+/workspaces $ npm install admin-lte@^4.0.0-beta2
+/workspaces $ cp node_modules/admin-lte/dist/css/adminlte.min.css colvert/core/static/css/adminlte.min.css
+/workspaces $ cp node_modules/admin-lte/dist/js/adminlte.min.js colvert/core/static/js/adminlte.min.js
 
-$ cd colvert
+/workspaces $ cd colvert
 ```
+
 For future library update, run again commands above by replacing the Bootstrap / AdminLTE version to download.
 
 ## Development
@@ -109,7 +113,7 @@ For future library update, run again commands above by replacing the Bootstrap /
 
 ### Docstrings
 
-**Docstrings** is done using *reStructuredText* formatting.
+**Docstrings** is done using _reStructuredText_ formatting.
 
 ### Packaging & Run
 

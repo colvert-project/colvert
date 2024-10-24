@@ -22,8 +22,8 @@
 * **WhiteNoise** - Django extension to serve static files.
 
     Copyright © 2013 David Evans.  
-    [![Licence: MIT](https://img.shields.io/badge/Licence-MIT-chartreuse)](https://github.com/evansd/whitenoise/blob/main/LICENSE)  
-    <https://github.com/evansd/whitenoise>
+    [![Licence: MIT](https://img.shields.io/badge/Licence-MIT-chartreuse)](https://github.com/evansd/whitenoise?tab=MIT-1-ov-file#readme)  
+    [github.com/evansd/whitenoise](https://github.com/evansd/whitenoise)
 
 * **Bootstrap** - TODO
 
@@ -31,15 +31,20 @@
 
 * **Sphinx** - TODO
 
-* **Sphinx to GitHub Pages V3** - Sphinx workflow used to build this documentation.
-sphinx-notes/pages@v3
+* **Sphinx to GitHub Pages V3** / `sphinx-notes/pages@v3` - Sphinx workflow used to build this documentation.
 
     Copyright © 2020 Sphinx Notes  
-    [![Licence: MIT](https://img.shields.io/badge/Licence-MIT-chartreuse)](https://github.com/sphinx-notes/pages/blob/v3/LICENSE)  
-    <https://github.com/sphinx-notes/pages>
+    [![Licence: MIT](https://img.shields.io/badge/Licence-MIT-chartreuse)](https://github.com/sphinx-notes/pages?tab=MIT-1-ov-file#readme)  
+    [github.com/sphinx-notes/pages](https://github.com/sphinx-notes/pages)
+
+* **Jinja2** - TODO
+
+* **myst-parser** - TODO
+
+* **sphinx_rtd_theme** - TODO
 
 * **Shields.io** - Badges as a service.
 
-    [![Licence: CC0](https://img.shields.io/badge/License-CC0-lightgrey)]()  
+    [![Licence: CC0](https://img.shields.io/badge/License-CC0-lightgrey)](https://github.com/badges/shields?tab=CC0-1.0-1-ov-file#readme)  
     [shields.io](https://shields.io)  
-    <https://github.com/badges/shields>
+    [github.com/badges/shields](https://github.com/badges/shields)

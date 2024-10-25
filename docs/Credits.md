@@ -25,9 +25,13 @@
     [![Licence: MIT](https://img.shields.io/badge/Licence-MIT-chartreuse)](https://github.com/evansd/whitenoise?tab=MIT-1-ov-file#readme)  
     [github.com/evansd/whitenoise](https://github.com/evansd/whitenoise)
 
-* **Bootstrap** - TODO
+* **AdminLTE** - HTML admin templates & components based on Bootstrap.
 
-* **AdminLTE** - TODO
+    Copyright 2014-2024 Colorlib <https://colorlib.com>  
+    [![Licence: MIT](https://img.shields.io/badge/Licence-MIT-chartreuse)](https://github.com/ColorlibHQ/AdminLTE/blob/master/LICENSE)
+    [AdminLTE.io](https://adminlte.io)
+
+* **Bootstrap** - TODO
 
 * **Sphinx** - TODO
 
@@ -48,3 +52,6 @@
     [![Licence: CC0](https://img.shields.io/badge/License-CC0-lightgrey)](https://github.com/badges/shields?tab=CC0-1.0-1-ov-file#readme)  
     [shields.io](https://shields.io)  
     [github.com/badges/shields](https://github.com/badges/shields)
+
+* **Simple Icons** - TODO
+<https://simpleicons.org/>

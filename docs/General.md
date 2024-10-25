@@ -1,6 +1,6 @@
 # General
 
-This **Developer Documentation** can be refered as **"CodeDoc"**.
+This **Developer Documentation** may be refered as **"CodeDoc"**.
 
 ## Development Environment
 
@@ -8,16 +8,18 @@ This **Developer Documentation** can be refered as **"CodeDoc"**.
 
 Create a personal **GitHub Codespaces** from scratch with ```colvert-project/colvert``` and ```origin/main``` remote repository.
 
-Some Visual Studio Code extensions can be settled in addition:
+Some Visual Studio Code extensions can be settled in addition of default ones:
 
-* Python
-* Python Debugger
-* Pylance
-* GitHub Actions
+* Python (_Microsoft_)
+* Python Debugger (_Microsoft_)
+* Pylance (_Microsoft_)
+* GitHub Actions (_GitHub_)
+* markdownlint (_David Anson_)
+* Docker (_Microsoft_)
 
 As reminder, in **GitHub Codespaces** states concerning opened tabs and settings (like color theme, etc.) are not saved until you set _Backup and Sync Settings_.
 
-### Documentation Build
+## Documentation Build
 
 It uses **Sphinx** with a third-party GitHub workflow in `.github/workflows/build-docs.yml` to trigger build on `git push` action. It uses the third-party action [`sphinx-notes/pages@v3`](https://github.com/sphinx-notes/pages).
 
@@ -36,17 +38,47 @@ Help links:
 
 # Architecture
 
-[![Python 3.12+](https://img.shields.io/badge/Python-3.12+-blue?logo=python&logoColor=white&labelColor=3776ab&color=ffd43b)](https://www.python.org)
-[![Django 5.1](https://img.shields.io/badge/Django-5.1-white?logo=django&logoColor=white&labelColor=092e20)](https://www.djangoproject.com)
-([![Bootstrap 5](https://img.shields.io/badge/Bootstrap-5.3-white?logo=bootstrap&logoColor=white&labelColor=7952b3)](getbootstrap.com))
+**Colvert** is a web application written in **_Python_ 3**, built on **_Django_ 5** web framework with **_AdminLTE 4_** templates library for view and control parts, itself based on **_Bootstrap_ 5**.
+
+## Packages & Libraries
+
+|Library|Type|Version|Purpose|
+|----------|------|------|-|
+|_Python_      |Engine|3.12.1     |Language in which Colvert is written with|
+|**Django**    |Python|5.1.1      |Web Application Framework (Basic application features, Templating, ORM)|
+|**WhiteNoise**|Python|6.7.0      |Server properly static files in production **AND** in debug mode|
+|AdminLTE      |CSS+JS|4.0.0-beta2|Front-end library used with HTML templates|
+|Bootstrap     |CSS+JS|5().3?       ||
+
+* Type means type of library.
+
+* In `requirements.txt`, versions are fixed.
+* In Python package, versions must be assume as 'at least', to let potential already deployed packages as is.
+
+ [![AdminLTE 4.0](https://img.shields.io/npm/v/admin-lte/latest.svg)](https://www.npmjs.com/package/admin-lte)  
+ _TODO_ Fix version, not latest  
+ <https://adminlte.io>  
+ ([![Bootstrap 5.3](https://img.shields.io/badge/Bootstrap-5.3-white?logo=bootstrap&logoColor=white&labelColor=7952b3)](getbootstrap.com))
+
+### Dependencies Matrix
+
+* _TODO_ Check with GitHub Dependabot
+
+### Official Documentation
+
+* Python
+
+<https://docs.djangoproject.com/>
+
+* WhiteNoise
 
 AdminLTE
 
-**Colvert** is a web application written in **_Python_ 3**, built on **_Django_ 5** web framework with **_AdminLTE 4_** as **_Bootstrap_ 5** template for view and control parts.
+* Bootstrap
 
 ## Project Setup
 
-### Packages Installation
+### Libraries Installation
 
 ```shell
 /workspaces/colvert (main) $ python --version
@@ -56,18 +88,13 @@ pip 24.2 from /usr/local/python/3.12.1/lib/python3.12/site-packages/pip (python 
 ```
 
 ```shell
- /workspaces/colvert (main) $ python -m pip install Django
- ...
- Successfully installed Django-5.1.1 asgiref-3.8.1 sqlparse-0.5.1
- /workspaces/colvert (main) $ django-admin --version
- 5.1.1
+/workspaces/colvert (main) $ python -m pip -r requirements.txt
 ```
 
-```shell
- /workspaces/colvert (main) $ python -m pip install WhiteNoise
- ...
- Successfully installed whitenoise-6.7.0
-```
+<https://whitenoise.readthedocs.io/en/latest/index.html#quickstart-for-django-apps>  
+<https://whitenoise.readthedocs.io/en/latest/django.html>
+
+* Applying Quickstart (only for MIDDLEWARE), 1., 2. & 5.
 
 ### Django Project Initialization
 
@@ -89,8 +116,7 @@ Hint: <https://automationpanda.com/2018/02/06/starting-a-django-project-in-an-ex
 
 * **AdminLTE**, admin dashboard & control panel theme. Built on top of Bootstrap.
 
-<https://adminlte.io/>
-
+<https://adminlte.io/>  
 <https://adminlte.io/docs/>
 
 Bootstrap and AdminLTE installed in minimal version:
@@ -120,10 +146,15 @@ For future library update, run again commands above by replacing the Bootstrap /
 Update `requirements.txt`
 
 ```shell
-python manage.py migrate
-python manage.py runserver
+python manage.py migrate # To update model if changed
+python manage.py collectstatic # To publish all static files in STATIC_ROOT if new ones need to
+python manage.py runserver # Start development server
 ```
 
-TODO - Collect staticfiles
-
 TODO - Merge migrations
+
+#### References
+
+<https://help.pythonanywhere.com/pages/DjangoStaticFiles/>  
+<https://docs.djangoproject.com/en/dev/howto/static-files/>  
+<https://docs.djangoproject.com/en/5.1/howto/static-files/deployment/>

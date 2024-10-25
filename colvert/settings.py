@@ -170,4 +170,4 @@ APP_POWERED_BY = "Powered by %s" % (APP_EMPOWERING_TECH)
 
 # Colvert - Static String Constants
 
-STR_DEBUG = "DEBUG"
+STR_PFX_DEBUG = "[DEBUG]"

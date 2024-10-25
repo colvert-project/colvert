@@ -3,6 +3,8 @@
 [![Release](https://img.shields.io/badge/dynamic/json?logo=git&logoColor=white&color=blue&label=Release&query=tag_name&url=https%3A%2F%2Fapi.github.com%2Frepos%2Fcolvert-project%2Fcolvert%2Freleases%2Flatest)](https://github.com/colvert-project/colvert/releases/latest)
 [![Documentation](https://img.shields.io/badge/Docs-docs.colvert.io-blue?logo=readthedocs&logoColor=white)](https://docs.colvert.io)
 [![Licence EUPL-1.2](https://img.shields.io/badge/Licence-EUPL--1.2-blue)](LICENCE)
+[![Python 3.12+](https://img.shields.io/badge/Python-3.12+-blue?logo=python&logoColor=white&labelColor=3776ab&color=ffd43b)](https://www.python.org)
+[![Django 5.1+](https://img.shields.io/badge/Django-5.1+-white?logo=django&logoColor=white&labelColor=092e20)](https://www.djangoproject.com)
 
 **Colvert** is a tool made for cybersecurity teams (CSIRTs / SOCs) and designed to manage their portfolio of _detection use cases_ through their entire lifecycle in the context of **Information Security Event Management**.
 
@@ -14,9 +16,9 @@
 It is designed to be used in the context of the _Service Area_ **Information Security Event Management** / _Service_ **Monitoring and Detection** / _Function_ **Detection Use Case Management** as defined in the [CSIRT Services Framework Version 2.1](https://www.first.org/standards/frameworks/csirts/csirt_services_framework_v2.1) from the [FIRST](https://www.first.org):
 
 > _**Purpose:**_ Manage the portfolio of detection use cases through their entire lifecycle.
-> 
+>
 > _**Description:**_ New detection approaches are developed, tested, and improved, and eventually onboarded into a detection use case in production. Instructions for analyst triage, qualification, and correlation need to be developed, for example in the form of playbooks and Standard Operating Procedures (SOPs). Use cases that do not perform well, i.e., that have an unfavorable benefit/effort ratio, need to be improved, redefined, or abandoned. The portfolio of detection use cases should be expanded in a risk-oriented way and in coordination with preventive controls.
-> 
+>
 > _**Outcome:**_ A portfolio of effective detection use cases that are relevant to the constituency is developed.
 
 ### Key Features
@@ -29,7 +31,6 @@ To respond to the needs explained above, **Colvert** offers the following key fe
     * From idea to organized and prioritized development
     * Map local ideas and needs to those provided by connectors
     * _Synchronize_ detection use cases with providers catalogs
-    *  on use cases
     * Use cases _scoring_ for priorization
     * Add full rich-text documentation and additional _more-valued data fields_ as:
       * _Runbooks_ for security analysts
@@ -74,7 +75,7 @@ All topics about installation / deployment / usage / design / architecture / etc
 ## Contact
 
 * Feel free to start a topic in discussions part: [colvert-project/discussions](https://github.com/orgs/colvert-project/discussions)
-* You can also contact project maintainers via mail: contact@colvert.io
+* You can also contact project maintainers via mail: <contact@colvert.io>
 
 ## Contributors
 
@@ -103,11 +104,11 @@ You may not use this work except in compliance with the Licence.
 You may obtain a copy of the Licence, available in the 23 official
 languages of the European Union, at:
 
-https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
+<https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12>
 
 ##
 
-[Colvert Logo](https://github.com/colvert-project/colvert/tree/main/rsc/logo) &copy; 2024 by [Colvert Project Team](https://github.com/colvert-project) is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1) <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="CC" width="16" height="16" /><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="BY" width="16" height="16" /><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="SA" width="16" height="16" />
+[Colvert Logo](https://github.com/colvert-project/colvert/tree/main/rsc/logo) &copy; 2024 by [Colvert Project Team](https://github.com/colvert-project) is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1)
 
 ![CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/80x15.png)
 

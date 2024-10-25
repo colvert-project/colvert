@@ -146,3 +146,8 @@ cython_debug/
 
 # Visual Studio Code
 .vscode/
+
+# TOFIX - styx0x6
+# For now, I (styx0x6) will exclude static files (STATIC_ROOT) from admin app until
+# development is more advanced and usage more defined about admin part. Useful in dev for now.
+static/admin

@@ -1,2 +1,2 @@
-Django==5.1.1
+Django==5.1.5
 whitenoise==6.7.0

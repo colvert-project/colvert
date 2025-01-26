@@ -80,7 +80,7 @@ with open(os.path.join(colvert_docs_root_reldir, 'index.rst'), 'w') as f:
 # -- Project information -----------------------------------------------------
 
 # Get project, author, version and release from colvert's settings.py file
-import settings
+from colvert import settings
 
 project = settings.APP_SHORT_NAME
 author = settings.APP_CONTRIBUTORS

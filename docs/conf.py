@@ -8,13 +8,13 @@ You may obtain a copy of the Licence, available in the 23 official
 languages of the European Union, at:
 https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
 
-Configuration file for the Colvert documentation builder.
+Configuration file for Sphinx, the Colvert documentation builder.
 
 This file only contains a selection of the most common and needed options.
 https://www.sphinx-doc.org/en/master/usage/configuration.html
 """
 
-# -- Path setup --------------------------------------------------------------
+# == Path setup ==============================================================
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -23,64 +23,46 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html
 import os
 import sys
 
-colvert_docs_root_reldir = '.'
-colvert_root_reldir ='..'
-colvert_main_reldir ='../colvert'
-colvert_core_reldir ='../core'
+COLVERT_DOCS_RELDIR = '.'
+COLVERT_MAIN_APP_RELDIR ='../colvert'
+COLVERT_CORE_APP_RELDIR ='../core'
 
-sys.path.insert(0, os.path.abspath(colvert_docs_root_reldir))
-sys.path.append(os.path.abspath(colvert_main_reldir))
-sys.path.append(os.path.abspath(colvert_core_reldir))
+sys.path.insert(0, os.path.abspath(COLVERT_DOCS_RELDIR))
+sys.path.append(os.path.abspath(COLVERT_MAIN_APP_RELDIR))
+sys.path.append(os.path.abspath(COLVERT_CORE_APP_RELDIR))
 
-# -- Prework run -------------------------------------------------------------
+# == Prework run =============================================================
 
 from shutil import copytree
 from jinja2 import Environment, FileSystemLoader
 
-# => sphinx-apidoc
-#TODO sphinx-apidoc
+# ==> sphinx-apidoc
+# TODO: sphinx-apidoc
 
-# => Import documentation from connectors
+# ==> Import documentation from connectors
 
-# Directory name in colvert which acts as connectors repository
-COLVERT_CONNECTORS_REPO_NAME = 'connectors'
-# Directory name in connector to pull documentation from
-CONNECTOR_DOCS_DIR_NAME = 'docs'
+connectors_docs_files = [] # List of copied files to add to index
 
-colvert_docs_connectors_abspath = os.path.abspath(os.path.join(colvert_docs_root_reldir, COLVERT_CONNECTORS_REPO_NAME))
-colvert_connectors_repo_abspath = os.path.abspath(os.path.join(colvert_root_reldir, COLVERT_CONNECTORS_REPO_NAME))
-
-# List of copied files to add to index
-connectors_docs_files = []
-
-# Copy docs directory from connectors to docs/connectors/{connector_name}/
-for f in os.scandir(colvert_connectors_repo_abspath):
-    if not f.is_dir():
-        continue
-
-    connector_docs_dir = os.path.join(f.path, CONNECTOR_DOCS_DIR_NAME)
-    if not os.path.isdir(connector_docs_dir):
-        continue
-    else:
-        colvert_docs_connector_dir = os.path.join(colvert_docs_connectors_abspath, f.name)
-        copied_path = copytree(connector_docs_dir, colvert_docs_connector_dir, dirs_exist_ok=True)
-        #TODO Manage subdir which is not the case here
-        for f in os.listdir(copied_path):
-            if f.endswith('.md') or f.endswith('.rst'):
-                connectors_docs_files.append(os.path.relpath(f, colvert_docs_root_reldir))
+# Copy [ROOT]connectors/{found_connector}/docs directory to [ROOT]docs/connectors/{connector_name}/
+for conn in os.scandir(os.path.abspath('../connectors')):
+    if conn.is_dir():
+        found_connector_docs = os.path.join(conn.path, 'docs')
+        if os.path.isdir(found_connector_docs):
+            copied_path = copytree(found_connector_docs, os.path.join(os.path.abspath(os.path.join(COLVERT_DOCS_RELDIR, 'connectors')), conn.name), dirs_exist_ok=True)
+            # TODO: Manage subdir which is not the case here
+            for f in os.listdir(copied_path):
+                if f.endswith('.rst') or f.endswith('.md'):
+                    connectors_docs_files.append(os.path.relpath(f, COLVERT_DOCS_RELDIR))
 
 # Create index.rst from Jinja2 template
-env = Environment(loader=FileSystemLoader(searchpath=str(colvert_docs_root_reldir)))
-index_template = env.get_template('index.rst.j2')
-index_content = index_template.render(plugin_docs=connectors_docs_files)
+env = Environment(loader=FileSystemLoader(searchpath=str(COLVERT_DOCS_RELDIR)))
+with open(os.path.join(COLVERT_DOCS_RELDIR, 'index.rst'), 'w') as f:
+    f.write(env.get_template(os.path.join(COLVERT_DOCS_RELDIR, 'index.rst.j2')).render(connectors_docs_files=connectors_docs_files))
 
-with open(os.path.join(colvert_docs_root_reldir, 'index.rst'), 'w') as f:
-    f.write(index_content)
+# == Get project information =================================================
 
-# -- Project information -----------------------------------------------------
-
-# Get project, author, version and release from colvert's settings.py file
-import settings
+# Get project, author, version and release from colvert/settings.py file
+import settings # Because COLVERT_MAIN_APP_RELDIR has been aded into sys.path
 
 project = settings.APP_SHORT_NAME
 author = settings.APP_CONTRIBUTORS
@@ -88,7 +70,7 @@ copyright = '%s, %s. %s. %s. %s' % (settings.APP_YEARS, author, settings.APP_CRE
 version = '.'.join(settings.APP_VERSION.split('.')[:2])
 release = settings.APP_VERSION
 
-# -- General configuration ---------------------------------------------------
+# == Sphinx configuration ====================================================
 
 extensions = [
     'myst_parser',
@@ -111,13 +93,10 @@ source_suffix = {
 
 html_theme = 'sphinx_rtd_theme'
 html_title = 'Colvert Documentation'
-# Get html_baseurl from the "file variable" CNAME
-with open(colvert_docs_root_reldir + '/' + 'CNAME') as f:
+with open(os.path.join(COLVERT_DOCS_RELDIR, 'CNAME')) as f: # Get html_baseurl from the "file variable" CNAME
     html_baseurl = f.readline().strip('\n')
-# Copy of colvert_square_192px.png
-html_logo = 'static/logo.png'
-# Copy of colvert_square_16px.png
-html_favicon = 'static/favicon.png'
+html_logo = 'static/logo.png' # Copy of colvert_square_192px.png
+html_favicon = 'static/favicon.png' # Copy of colvert_square_16px.png
 #html_output_encoding = 'utf-8'
 html_static_path = ['static']
 html_show_sourcelink = False

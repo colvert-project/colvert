@@ -1,64 +1,58 @@
-:tocdepth: 3
-
 ###################################
 Welcome to Colvert's documentation!
 ###################################
 
 **Colvert** is a tool made for cybersecurity teams (CSIRTs / SOCs) and designed to manage their portfolio of *detection use cases* through their entire lifecycle in the context of **Information Security Event Management**.
 
-Presentation
-============
+.. admonition:: Presentation
 
-The tool consists of:
+   Go to the main repository https://github.com/colvert-project/colvert for an overview of the tool.
 
-* The main application.
-* Connectors to potentially get data from providers and contextual more-valued information.
+   * Website: `colvert.io <https://colvert.io/>`_
+   * Contact: contact@colvert.io
 
-Go to the main repository https://github.com/colvert-project/colvert for an overview of the tool.
+.. seealso::
 
-* Website: `colvert.io <https://colvert.io/>`_
-* Contact: contact@colvert.io
+   * **Packages:** https://github.com/orgs/colvert-project/packages
+   * **Discussions:** https://github.com/orgs/colvert-project/discussions
+   * **Issues Tracker:** https://github.com/colvert-project/colvert/issues
 
-Interesting Places
-==================
-
-* **Packages:** https://github.com/orgs/colvert-project/packages
-* **Discussions:** https://github.com/orgs/colvert-project/discussions
-* **Issues Tracker:** https://github.com/colvert-project/colvert/issues
-
-* **Security Policy:** https://github.com/colvert-project/colvert/security/policy
-* **Security Advisories:** https://github.com/colvert-project/colvert/security/advisories
+   * **Security Policy:** https://github.com/colvert-project/colvert/security/policy
+   * **Security Advisories:** https://github.com/colvert-project/colvert/security/advisories
 
 Contributing
 ============
 
-How to contribute? 
-https://github.com/colvert-project/colvert/blob/main/CONTRIBUTING.md
+How to contribute? `See here. <https://github.com/colvert-project/colvert/blob/main/CONTRIBUTING.md>`_
 
-Colvert Contributor Code of Conduct: 
-https://github.com/colvert-project/colvert/blob/main/CODE_OF_CONDUCT.md
+.. seealso::
+
+   `Colvert Contributor Code of Conduct <https://github.com/colvert-project/colvert/blob/main/CODE_OF_CONDUCT.md>`_
 
 Table of Contents
 =================
 
 .. toctree::
-   Home index.rst
+   Home <index>
 
 .. toctree::
    :caption: Usage Guide
+   :maxdepth: 3
 
    Getting-Started.md
 
 .. toctree::
    :caption: Connectors Documentation
+   :maxdepth: 3
 
    Connectors.md
-   {% for connector in connectors %}
-      {{ connector }}
+   {% for file in connectors_docs_files %}
+      {{ file }}
    {% endfor %}
 
 .. toctree::
    :caption: Developer Documentation
+   :maxdepth: 3
 
    Dev-General.md
    Software-Architecture.md
@@ -67,12 +61,14 @@ Table of Contents
 
 .. toctree::
    :caption: Core System Docstrings
+   :maxdepth: 3
 
    Docstrings :ref:`modindex`
    _generated/modules
 
 .. toctree::
    :caption: About
+   :maxdepth: 3
 
    Changelog <https://github.com/colvert-project/colvert/releases>
    colvert.io <https://colvert.io>

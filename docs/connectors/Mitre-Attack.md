@@ -1,3 +1,0 @@
-# Mitre Attack
-
-TODO

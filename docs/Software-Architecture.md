@@ -2,6 +2,11 @@
 
 **Colvert** is a web application written in **_Python_ 3**, built on **_Django_ 5** web framework with **_AdminLTE 4_** templates library for view and control parts, itself based on **_Bootstrap_ 5**.
 
+The architecture consists of:
+
+* The main application.
+* Connectors to potentially get data from providers and contextual more-valued information.
+
 ## Packages & Libraries
 
 |Library|Type|Version|Purpose|

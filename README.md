@@ -28,26 +28,27 @@ To respond to the needs explained above, **Colvert** offers the following key fe
 * **Dashboards**
 * **Detection Use Cases Management**
   * **Add / Modify / Delete** Detection Use Cases
-    * From idea to organized and prioritized development
-    * Map local ideas and needs to those provided by connectors
-    * _Synchronize_ detection use cases with providers catalogs
-    * Use cases _scoring_ for priorization
+    * Status from idea to implementation through organized and prioritized development.
+    * Use cases _scoring_ for priorization.
+    * Enhance detection use cases with contextual data provided by connectors.
+    * _Synchronize_ detection use cases with providers catalogs.
     * Add full rich-text documentation and additional _more-valued data fields_ as:
-      * _Runbooks_ for security analysts
-      * Implemented queries
-    * Add _Custom Lists_ (Whitelists, Thresholds, Scope, etc.)
-    * Attach external documents or reference to
-    * Development status
+      * _Runbooks_ for security analysts.
+      * Implemented queries.
+    * Add _Custom Lists_ (Whitelists, Thresholds, Scope, etc.).
+    * Attach external documents or references to.
 
 ### Roadmap
 
-* Scoring System
-* Connectors
-* Source Logs
-* For now, one **Colvert** instance is dedicated to one constituency. In the future, **Colvert** should be able to manage a relationship between detection use cases and multiple constituencies.
+* Scoring System.
+* Connectors.
+* Source Logs.
+* For now, one **Colvert** instance is dedicated to one constituency. In the future, **Colvert** might be able to manage a relationship between detection use cases and multiple constituencies with also dedicated use cases by constituancy.
 * Metrics about use cases that do not perform well, i.e., that have an unfavorable benefit/effort ratio, need to be improved, redefined, or abandoned.
 
 ### Why Colvert?
+
+From a very long brainstorming:
 
 **D**etection **U**se **C**ase >>> **DUC** >>> DUCK >>> **Colvert** (Mallard duck in French).
 
@@ -65,7 +66,7 @@ That's it.
 
 Changelog details are available on the [releases](https://github.com/colvert-project/colvert/releases) page.
 
-All topics about installation / deployment / usage / design / architecture / etc. can be found in [**documentation**](https://docs.colvert.io).
+All topics about installation / deployment / usage / design / architecture / contribution / etc. can be found in [**documentation**](https://docs.colvert.io).
 
 ## Security
 
@@ -83,9 +84,11 @@ All topics about installation / deployment / usage / design / architecture / etc
 
 * **styx0x6** <<https://github.com/styx0x6>>
 
+[![styx0x6](https://github.com/styx0x6.png?size=40)](https://github.com/styx0x6)
+
 ### Contributing Developers
 
-[![styx0x6](https://github.com/styx0x6.png?size=40)](https://github.com/styx0x6)
+.
 
 ### Sponsors
 
@@ -108,9 +111,9 @@ languages of the European Union, at:
 
 ##
 
-[Colvert Logo](https://github.com/colvert-project/colvert/tree/main/rsc/logo) &copy; 2024 by [Colvert Project Team](https://github.com/colvert-project) is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1)
-
 ![CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/80x15.png)
+
+[Colvert Logo](https://github.com/colvert-project/colvert/tree/main/rsc/logo) &copy; 2024 by [Colvert Project Team](https://github.com/colvert-project) is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1)
 
 ## Credits
 

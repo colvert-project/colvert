@@ -1,20 +1,24 @@
-# Getting started
+# Getting Started
+
+General information available in [README.md](https://github.com/colvert-project/colvert/blob/main/README.md).
 
 ## Requirements
 
 TODO
 
-## Installing Colvert
+## Deploy Colvert
 
 ### Git Clone
 
-TODO
+```shell
+git clone https://github.com/colvert-project/colvert.git
+```
 
 ### PyPI
 
 TODO
 
-### Docker
+### PaaS
 
 #### Docker Hub
 
@@ -28,4 +32,10 @@ TODO
 
 TODO
 
+#### Dokploy
+
+TODO
+
 ### Offline
+
+TODO

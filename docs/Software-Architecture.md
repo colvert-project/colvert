@@ -1,42 +1,4 @@
-# General
-
-This **Developer Documentation** may be refered as **"CodeDoc"**.
-
-## Development Environment
-
-### GitHub Codespaces
-
-Create a personal **GitHub Codespaces** from scratch with ```colvert-project/colvert``` and ```origin/main``` remote repository.
-
-Some Visual Studio Code extensions can be settled in addition of default ones:
-
-* Python (_Microsoft_)
-* Python Debugger (_Microsoft_)
-* Pylance (_Microsoft_)
-* GitHub Actions (_GitHub_)
-* markdownlint (_David Anson_)
-* Docker (_Microsoft_)
-
-As reminder, in **GitHub Codespaces** states concerning opened tabs and settings (like color theme, etc.) are not saved until you set _Backup and Sync Settings_.
-
-## Documentation Build
-
-It uses **Sphinx** with a third-party GitHub workflow in `.github/workflows/build-docs.yml` to trigger build on `git push` action. It uses the third-party action [`sphinx-notes/pages@v3`](https://github.com/sphinx-notes/pages).
-
-|File                   |Usage                                                                                                                    |
-|-----------------------|-------------------------------------------------------------------------------------------------------------------------|
-|`static/`              |Classic favicon, logo, and other static file to serve.                                                                   |
-|`docs/requirements.txt`|pip packages needed by Sphinx to build documentation. Commented.                                                         |
-|`docs/conf.py`         |Sphinx configuration. Commented.                                                                                         |
-|`CNAME`                |Define the base URL for documentation. Not used by GitHub as built using a workflow, but used by `conf.py`.              |
-|`index.rst.j2`         |Jinja2 parsed first template (`conf.py`) to load docs from connectors, then Sphinx index using _reStructuredText_ format.|
-|`*.md`                 |All others documentation files in Markdown format.                                                                       |
-
-Help links:
-
-* Sphinx docs for `conf.py`: <https://www.sphinx-doc.org/en/master/usage/configuration.html>
-
-# Architecture
+# Software Architecture
 
 **Colvert** is a web application written in **_Python_ 3**, built on **_Django_ 5** web framework with **_AdminLTE 4_** templates library for view and control parts, itself based on **_Bootstrap_ 5**.
 
@@ -45,7 +7,7 @@ Help links:
 |Library|Type|Version|Purpose|
 |----------|------|------|-|
 |_Python_      |Engine|3.12.1     |Language in which Colvert is written with|
-|**Django**    |Python|5.1.1      |Web Application Framework (Basic application features, Templating, ORM)|
+|**Django**    |Python|5.1.5      |Web Application Framework (Basic application features, Templating, ORM)|
 |**WhiteNoise**|Python|6.7.0      |Server properly static files in production **AND** in debug mode|
 |AdminLTE      |CSS+JS|4.0.0-beta2|Front-end library used with HTML templates|
 |Bootstrap     |CSS+JS|5().3?       ||
@@ -96,6 +58,14 @@ pip 24.2 from /usr/local/python/3.12.1/lib/python3.12/site-packages/pip (python 
 
 * Applying Quickstart (only for MIDDLEWARE), 1., 2. & 5.
 
+#### Python Libraries Upgrade
+
+* pip
+
+```shell
+python -m pip install --upgrade pip
+```
+
 ### Django Project Initialization
 
 Within the root repository folder ```/workspaces/colvert```.
@@ -107,7 +77,7 @@ Within the root repository folder ```/workspaces/colvert```.
 
 Hint: <https://automationpanda.com/2018/02/06/starting-a-django-project-in-an-existing-directory/>
 
-## Additional Libraries Installation
+### Additional Libraries Installation
 
 ```shell
 /workspaces/colvert (main) $ npm --version
@@ -116,6 +86,7 @@ Hint: <https://automationpanda.com/2018/02/06/starting-a-django-project-in-an-ex
 
 * **AdminLTE**, admin dashboard & control panel theme. Built on top of Bootstrap.
 
+References:
 <https://adminlte.io/>  
 <https://adminlte.io/docs/>
 
@@ -141,17 +112,63 @@ For future library update, run again commands above by replacing the Bootstrap /
 
 **Docstrings** is done using _reStructuredText_ formatting.
 
-### Packaging & Run
+### Model Management
 
-Update `requirements.txt`
+#### Strategy
+
+We avoid :
 
 ```shell
-python manage.py migrate # To update model if changed
-python manage.py collectstatic # To publish all static files in STATIC_ROOT if new ones need to
-python manage.py runserver # Start development server
+# Generate an empty migration file from the given app
+python manage.py makemigrations --empty core --name add_defaults
 ```
 
-TODO - Merge migrations
+TODO doc. signal
+
+#### Reset migration files & DB
+
+1. Delete `migrations/__pycache__`.
+2. Delete problematic or all `migrations/<XXXX_MIG>.py` files.
+3. Delete `db.sqlite3` file.
+4. `python manage.py makemigrations` (create also empty db.sqlite3 if not existing).
+5. `python manage.py migrate` to apply model in DB, will also set default values if they do not exist using the Django Signals approach.
+
+#### Model Migration Cheatsheet
+
+```shell
+# Generate migration files from the given app, or for all apps if not given
+python manage.py makemigrations [<APP>]
+
+# TODO
+python manage.py squashmigrations core 0001 0003
+
+# To apply model in DB
+python manage.py migrate
+
+# TODO
+python manage.py showmigrations
+```
+
+### Fixtures
+
+TODO: python manage.py loaddata core/fixtures
+
+#### Static Files Management
+
+```shell
+python manage.py collectstatic # To publish all static files in STATIC_ROOT if new ones need to
+```
+
+### Packaging & Run
+
+1. Update `requirements.txt`
+2. Migrate model if needed
+3. Publish static files if needed
+4. Run development server:
+
+```shell
+python manage.py runserver
+```
 
 #### References
 

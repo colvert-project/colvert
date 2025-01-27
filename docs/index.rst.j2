@@ -12,71 +12,66 @@ The tool consists of:
 * The main application.
 * Connectors to potentially get data from providers and contextual more-valued information.
 
-Go to the main repository <https://github.com/colvert-project/colvert> for an overview of the tool.
+Go to the main repository https://github.com/colvert-project/colvert for an overview of the tool.
 
-* Website: <https://colvert.io>
+* Website: https://colvert.io
 * Contact: contact@colvert.io
 
 Interesting Places
 ==================
 
-* **Last Release:** <https://github.com/colvert-project/colvert/releases/latest>
-* **Packages:** <https://github.com/orgs/colvert-project/packages>
-* **Discussions:** <https://github.com/orgs/colvert-project/discussions>
-* **Issues Tracker:** <https://github.com/colvert-project/colvert/issues>
+* **Packages:** https://github.com/orgs/colvert-project/packages
+* **Discussions:** https://github.com/orgs/colvert-project/discussions
+* **Issues Tracker:** https://github.com/colvert-project/colvert/issues
 
-* **Security Policy:** <https://github.com/colvert-project/colvert/security/policy>
-* **Security Advisories:** <https://github.com/colvert-project/colvert/security/advisories>
+* **Security Policy:** https://github.com/colvert-project/colvert/security/policy
+* **Security Advisories:** https://github.com/colvert-project/colvert/security/advisories
 
 Contributing
 ============
 
-* How to contribute?
-   * <https://github.com/colvert-project/colvert/blob/main/CONTRIBUTING.md>
+* How to contribute? 
+https://github.com/colvert-project/colvert/blob/main/CONTRIBUTING.md
 
-* Colvert Contributor Code of Conduct:
-   * <https://github.com/colvert-project/colvert/blob/main/CODE_OF_CONDUCT.md>
+* Colvert Contributor Code of Conduct: 
+https://github.com/colvert-project/colvert/blob/main/CODE_OF_CONDUCT.md
+
+:tocdepth: 3
 
 .. toctree::
-   :maxdepth: 3
    :caption: Usage Guide
 
    Getting-Started.md
 
-The following section contains documentation from installed connectors.
-
 .. toctree::
-   :maxdepth: 3
    :caption: Connectors Documentation
-{% for connector_doc in connector_docs %}
-   {{ connector_doc }}
-{% endfor %}
 
-The following section contains information intended to help developers to understand the inner workings of the Colvert tool and Colvert connectors.
+   Connectors.md
+   {% for connector in connectors %}
+      {{ connector }}
+   {% endfor %}
 
 .. toctree::
-   :maxdepth: 2
    :caption: Developer Documentation
 
-   General.md
+   Dev-General.md
+   Software-Architecture.md
    How-to-Build-Connectors.md
    Credits.md
 
 .. toctree::
-   :maxdepth: 3
    :caption: Core System Docstrings
 
    _generated/modules
 
 .. toctree::
-   :maxdepth: 1
    :caption: About
 
    Changelog <https://github.com/colvert-project/colvert/releases>
+   colvert.io <https://colvert.io>
 
-Indices and tables
-==================
+Indices
+=======
 
 * :ref:`genindex`
 * :ref:`modindex`
-* :ref:`search`

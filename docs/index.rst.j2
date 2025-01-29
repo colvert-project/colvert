@@ -2,23 +2,33 @@
 Welcome to Colvert's documentation!
 ###################################
 
+.. attention::
+
+   **This documentation is a work in progress.** Please consider that some parts may be incomplete or contain mistakes.
+
 **Colvert** is a tool made for cybersecurity teams (CSIRTs / SOCs) and designed to manage their portfolio of *detection use cases* through their entire lifecycle in the context of **Information Security Event Management**.
 
-.. admonition:: Presentation
+Go to the main repository https://github.com/colvert-project/colvert for an overview of the tool.
 
-   Go to the main repository https://github.com/colvert-project/colvert for an overview of the tool.
-
-   * Website: `colvert.io <https://colvert.io/>`_
-   * Contact: contact@colvert.io
+* Website: `colvert.io <https://colvert.io/>`_
+* Contact: contact@colvert.io
 
 .. seealso::
 
    * **Packages:** https://github.com/orgs/colvert-project/packages
    * **Discussions:** https://github.com/orgs/colvert-project/discussions
    * **Issues Tracker:** https://github.com/colvert-project/colvert/issues
-
+   
    * **Security Policy:** https://github.com/colvert-project/colvert/security/policy
    * **Security Advisories:** https://github.com/colvert-project/colvert/security/advisories
+
+.. admonition:: Licence
+
+   Licensed under the EUPL, Version 1.2 only (the "Licence");
+   You may not use this work except in compliance with the Licence.
+   You may obtain a copy of the Licence, available in the 23 official
+   languages of the European Union, at:
+   https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
 
 Contributing
 ============
@@ -32,23 +42,14 @@ How to contribute? `See here. <https://github.com/colvert-project/colvert/blob/m
 Table of Contents
 =================
 
-.. toctree::
-   Home <index>
+* `Home <index.html>`_
 
 .. toctree::
    :caption: Usage Guide
    :maxdepth: 3
 
    Getting-Started.md
-
-.. toctree::
-   :caption: Connectors Documentation
-   :maxdepth: 3
-
-   Connectors.md
-   {% for file in connectors_docs_files %}
-      {{ file }}
-   {% endfor %}
+   USAGE_Configuration.rst
 
 .. toctree::
    :caption: Developer Documentation
@@ -56,15 +57,18 @@ Table of Contents
 
    Dev-General.md
    Software-Architecture.md
-   How-to-Build-Connectors.md
+   Docstrings TODO
    Credits.md
 
 .. toctree::
-   :caption: Core System Docstrings
+   :caption: Connectors Documentation
    :maxdepth: 3
 
-   Docstrings :ref:`modindex`
-   _generated/modules
+   Connectors.md
+   How-to-Build-Connectors.md
+   {% for file in connectors_docs_files %}
+      {{ file }}
+   {% endfor %}
 
 .. toctree::
    :caption: About

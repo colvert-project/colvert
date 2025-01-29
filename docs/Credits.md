@@ -25,6 +25,10 @@
     [![Licence: MIT](https://img.shields.io/badge/Licence-MIT-chartreuse)](https://github.com/evansd/whitenoise?tab=MIT-1-ov-file#readme)  
     [github.com/evansd/whitenoise](https://github.com/evansd/whitenoise)
 
+* **django-mssql-backend** - TODO
+
+* **pyodbc** - TODO
+
 * **AdminLTE** - HTML admin templates & components based on Bootstrap.
 
     Copyright 2014-2024 Colorlib <https://colorlib.com>  

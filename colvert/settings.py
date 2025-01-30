@@ -195,6 +195,9 @@ APP_POWERED_BY = "Powered by %s" % (APP_EMPOWERING_TECH)
 
 TITLE_PREFIX = f"[DEBUG] {APP_SHORT_NAME}" if DEBUG else APP_SHORT_NAME
 
+DEFAULT_ADMIN_USER = 'admin'
+DEFAULT_ADMIN_PASSWORD = 'colvert'
+
 # Colvert - Organization constants
 
 ORG_NAME = config.org_name

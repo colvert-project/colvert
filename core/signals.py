@@ -12,9 +12,18 @@ https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
 from django.db.models.signals import post_migrate
 from django.dispatch import receiver
 from .models.usecase import Severity, Status
+from django.contrib.auth.models import User
+from django.conf import settings
 
 @receiver(post_migrate)
 def add_default_values(sender, **kwargs):
+    """Add default values to the database after the migration.
+
+    Default values added for the following models:
+        - Severity
+        - Status
+    and create the default admin user.
+    """
     if sender.name == 'core':
         default_severities = [
             {'name': 'Low'},
@@ -38,3 +47,7 @@ def add_default_values(sender, **kwargs):
         ]
         for status in default_status:
             Status.objects.get_or_create(**status)
+        
+        # Create the default admin user
+        User.objects.create_superuser(username=getattr(settings, 'DEFAULT_ADMIN_USER'), password=getattr(settings, 'DEFAULT_ADMIN_PASSWORD'))
+        # TODO: Django logger #print("Default values added successfully.")

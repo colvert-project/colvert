@@ -1,2 +1,4 @@
 Django==5.1.5
 whitenoise==6.7.0
+django-mssql-backend==2.8.1
+# Will be included by django-mssql-backend: pyodbc==5.2.0

@@ -49,7 +49,7 @@ class ColvertConfig:
         self._yml_org_logo = 'org_180px.png'
         self._yml_debug = False
         self._yml_allowed_hosts = ['*']
-        self._yml_csrf_trusted_origins = ['*']
+        self._yml_csrf_trusted_origins = ['http://', 'https://']
         self._yml_database = {
             "default": {
                 "ENGINE": "django.db.backends.sqlite3",

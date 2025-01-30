@@ -15,7 +15,8 @@ debug: 'false'
 allowed-hosts:
   - '*'
 csrf-trusted-origins:
-  - '*'
+  - 'http://'
+  - 'https://'
 database:
   engine: 'django.db.backends.sqlite3'
   dbname: 'db.sqlite3'

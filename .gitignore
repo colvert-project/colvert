@@ -144,6 +144,9 @@ cython_debug/
 # Visual Studio Code
 .vscode/
 
+# DevDb (Visual Studio Code extension)
+.devdbrc
+
 # Colvert specific
 colvert.yml
 colvert.yaml

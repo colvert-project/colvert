@@ -20,7 +20,18 @@ Some Visual Studio Code extensions can be settled in addition of default ones:
 * GitHub Copilot Chat (_GitHub_)
 * markdownlint (_David Anson_)
 * Docker (_Microsoft_)
-* SQLite Viewer (_Florian Klampfer_)
+* DevDb (_Damilola Olowookere_)
+  * `.devdbrc` (Also ignored in `.gitignore`)
+
+```json
+[
+    {
+        "type": "sqlite",
+        "path": "/workspaces/colvert/db.sqlite3"
+    }
+]
+```
+
 * autoDocstring - Python Docstring Generator (_Nils Werner_)
   * <https://sphinx-rtd-tutorial.readthedocs.io/en/latest/docstrings.html>
   * Settings > Extensions > Python Docstring Generator configuration > _Docstring Format_ > `sphinx`

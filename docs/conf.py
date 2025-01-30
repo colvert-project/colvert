@@ -10,8 +10,16 @@ https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
 
 Configuration file for Sphinx, the Colvert documentation builder.
 
-This file only contains a selection of the most common and needed options.
+This file contains a selection of the most common and needed options.
 https://www.sphinx-doc.org/en/master/usage/configuration.html
+
+It also contains the path setup for the documentation build, the prework
+run to import documentation from connectors and project information from Colvert.
+
+This file is executed by Sphinx when it is started to build the documentation
+from two ways:
+- By GitHub Actions when a push is made on the main branch (.github/workflows/build-docs.yml)
+- By the developer when he wants to build the documentation locally (run_local_docs.py)
 """
 
 # == Path setup ==============================================================
@@ -35,6 +43,7 @@ sys.path.append(os.path.abspath(COLVERT_CORE_APP_RELDIR))
 
 from shutil import copytree
 from jinja2 import Environment, FileSystemLoader
+from datetime import datetime
 
 # ==> sphinx-apidoc
 # TODO: sphinx-apidoc
@@ -59,22 +68,20 @@ env = Environment(loader=FileSystemLoader(searchpath=str(COLVERT_DOCS_RELDIR)))
 with open(os.path.join(COLVERT_DOCS_RELDIR, 'index.rst'), 'w') as f:
     f.write(env.get_template(os.path.join(COLVERT_DOCS_RELDIR, 'index.rst.j2')).render(connectors_docs_files=connectors_docs_files))
 
-# == Get project information =================================================
+# == Project information =================================================
 
-# Get project, author, version and release from colvert/settings.py file
-import settings # Because COLVERT_MAIN_APP_RELDIR has been aded into sys.path
-
-project = settings.APP_SHORT_NAME
-author = settings.APP_CONTRIBUTORS
-copyright = '%s, %s. %s. %s. %s' % (settings.APP_YEARS, author, settings.APP_CREATED_BY, settings.APP_SPONSORED_BY, settings.APP_POWERED_BY)
-version = '.'.join(settings.APP_VERSION.split('.')[:2])
-release = settings.APP_VERSION
+project = 'Colvert'
+author = 'styx0x6 and the Colvert Contributors'
+copyright = f"2024-{datetime.now().year}, {author}."
+# TODO: version = '.'.join(APP_VERSION.split('.')[:2])
+# TODO: release = APP_VERSION
 
 # == Sphinx configuration ====================================================
 
 extensions = [
     'myst_parser',
     'sphinx.ext.githubpages',
+    'sphinx.ext.autodoc',
 ]
 
 # Format of the date

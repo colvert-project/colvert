@@ -9,6 +9,8 @@
 
 # Colvert's configuration
 
+org-name: 'Colvert'
+org-logo: 'org_180px.png'
 debug: 'false'
 allowed-hosts:
   - '*'

@@ -45,6 +45,8 @@ class ColvertConfig:
         self._secret_key = self._load_secret_key()
 
         # Default configuration settings
+        self._yml_org_name = 'Colvert'
+        self._yml_org_logo = 'org_180px.png'
         self._yml_debug = False
         self._yml_allowed_hosts = ['*']
         self._yml_csrf_trusted_origins = ['*']
@@ -58,8 +60,12 @@ class ColvertConfig:
         yaml_config = self._load_yaml_config()
         if yaml_config:
             for key, value in yaml_config.items():
-                if key == 'debug':
-                    self._yml_debug = True if str(value).lower() == 'true' else False
+                if key == 'org-name':
+                    self._yml_org_name = str(value.get('org-name', self._yml_org_name))
+                elif key == 'org-logo':
+                    self._yml_org_logo = str(value.get('org-logo', self._yml_org_logo))
+                elif key == 'debug':
+                    self._yml_debug = str(value).lower() == 'true'
                 elif key == 'allowed-hosts':
                     self._yml_allowed_hosts = [str(host) for host in value]
                 elif key == 'csrf-trusted-origins':
@@ -153,6 +159,14 @@ class ColvertConfig:
     @property
     def secret_key(self) -> str:
         return self._secret_key
+
+    @property
+    def org_name(self) -> str:
+        return self._yml_org_name
+
+    @property
+    def org_logo(self) -> str:
+        return self._yml_org_logo
 
     @property
     def debug(self) -> bool:

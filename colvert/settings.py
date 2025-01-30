@@ -194,3 +194,8 @@ APP_POWERED_BY = "Powered by %s" % (APP_EMPOWERING_TECH)
 # Colvert - Static String Constants
 
 TITLE_PREFIX = f"[DEBUG] {APP_SHORT_NAME}" if DEBUG else APP_SHORT_NAME
+
+# Colvert - Organization constants
+
+ORG_NAME = config.org_name
+ORG_LOGO = config.org_logo

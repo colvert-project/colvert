@@ -61,8 +61,8 @@ db.sqlite3-journal
 # Scrapy stuff:
 .scrapy
 
-# Sphinx documentation
-docs/_build/
+# Sphinx documentation build dir & files
+docs/_build*
 
 # PyBuilder
 .pybuilder/
@@ -120,9 +120,6 @@ venv.bak/
 .spyderproject
 .spyproject
 
-# mkdocs documentation
-/site
-
 # mypy
 .mypy_cache/
 .dmypy.json
@@ -147,7 +144,12 @@ cython_debug/
 # Visual Studio Code
 .vscode/
 
-# TOFIX - styx0x6
+# Colvert specific
+colvert.yml
+colvert.yaml
+SECRET_KEY
+
+# TODO: TOFIX - styx0x6
 # For now, I (styx0x6) will exclude static files (STATIC_ROOT) from admin app until
 # development is more advanced and usage more defined about admin part. Useful in dev for now.
 static/admin

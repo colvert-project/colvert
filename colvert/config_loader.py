@@ -61,9 +61,9 @@ class ColvertConfig:
         if yaml_config:
             for key, value in yaml_config.items():
                 if key == 'org-name':
-                    self._yml_org_name = str(value.get('org-name', self._yml_org_name))
+                    self._yml_org_name = str(value)
                 elif key == 'org-logo':
-                    self._yml_org_logo = str(value.get('org-logo', self._yml_org_logo))
+                    self._yml_org_logo = str(value)
                 elif key == 'debug':
                     self._yml_debug = str(value).lower() == 'true'
                 elif key == 'allowed-hosts':

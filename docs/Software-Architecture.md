@@ -14,8 +14,8 @@ The architecture consists of:
 |_Python_      |Engine|3.12.1     |Language in which Colvert is written with|
 |**Django**    |Python|5.1.5      |Web Application Framework (Basic application features, Templating, ORM)|
 |**WhiteNoise**|Python|6.7.0      |Server properly static files in production **AND** in debug mode|
-|AdminLTE      |CSS+JS|4.0.0-beta2|Front-end library used with HTML templates|
-|Bootstrap     |CSS+JS|5().3?       ||
+|AdminLTE      |CSS+JS|4.0.0-beta3|Front-end library used with HTML templates|
+|Bootstrap     |CSS+JS|5.3.3      |Embedded within AdminLTE 4.0.0-beta3|
 
 * Type means type of library.
 
@@ -23,8 +23,7 @@ The architecture consists of:
 * In Python package, versions must be assume as 'at least', to let potential already deployed packages as is.
 
  [![AdminLTE 4.0](https://img.shields.io/npm/v/admin-lte/latest.svg)](https://www.npmjs.com/package/admin-lte)  
- _TODO_ Fix version, not latest  
- <https://adminlte.io>  
+
  ([![Bootstrap 5.3](https://img.shields.io/badge/Bootstrap-5.3-white?logo=bootstrap&logoColor=white&labelColor=7952b3)](getbootstrap.com))
 
 ### Dependencies Matrix
@@ -39,7 +38,9 @@ The architecture consists of:
 
 * WhiteNoise
 
-AdminLTE
+* AdminLTE
+
+ <https://adminlte.io>  
 
 * Bootstrap
 
@@ -99,12 +100,17 @@ Bootstrap and AdminLTE installed in minimal version:
 
 ```shell
 /workspaces/colvert (main) $ cd /workspaces
-
-/workspaces $ npm install admin-lte@^4.0.0-beta2
+/workspaces $ npm install admin-lte@^4.0.0-beta3
 /workspaces $ cp node_modules/admin-lte/dist/css/adminlte.min.css colvert/core/static/css/adminlte.min.css
 /workspaces $ cp node_modules/admin-lte/dist/js/adminlte.min.js colvert/core/static/js/adminlte.min.js
-
+/workspaces $ npm rm admin-lte
 /workspaces $ cd colvert
+```
+
+Then, update static files:
+
+```shell
+/workspaces/colvert (main) $ python manage.py collectstatic
 ```
 
 For future library update, run again commands above by replacing the Bootstrap / AdminLTE version to download.

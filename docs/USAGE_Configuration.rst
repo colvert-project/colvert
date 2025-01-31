@@ -2,80 +2,153 @@
 How to Configure Colvert
 ########################
 
-If it doesn't exist already (a.k.a. at the first run), Colvert will create `colvert.yml` configuration file with defaults settings.
+If it doesn't already exist (as at the first run), Colvert will create ``colvert.yml`` configuration file with defaults settings.
 
-You can modify the settings in the `colvert.yml` file to suit your requirements.
+You can modify the settings in ``colvert.yml`` to suit your requirements.
 
 .. note::
 
-    You can also reset the configuration to the default settings by deleting the `colvert.yml` file and restarting the application, or by copying the `colvert.template.yml` file to `colvert.yml`.
+    You can also reset the configuration to the default settings by deleting ``colvert.yml`` and restarting the application, or by copying ``colvert.template.yml`` to ``colvert.yml``.
 
-Settings
---------
+File colvert.yml
+================
 
-The `colvert.yml` file must be set with the following configuration settings:
+Configuration
+-------------
 
-**TODO** REVIEW RST FORMAT BELOW
+``colvert.yml`` is the configuration file for Colvert. It is located in the root directory of the application and must be set with the configuration settings below.
 
-- **debug**: Enables or disables debug mode.
-  - Type: string
-  - Values: 'true' or 'false'
-    - Default: 'false'
+.. note::
 
-- **allowed-hosts**: A list of strings representing the host/domain names that Colvert can serve.
-    - Type: list of strings
-    - Example: ['yourdomain.com', 'www.yourdomain.com']
+    By default, Colvert uses the **SQLite** local database. You can change the database settings to use other databases such as **PostgreSQL**, **MySQL**, **Oracle** or **Microsoft SQL Server**.
 
-- **csrf-trusted-origins**: A list of trusted origins for CSRF protection.
-    - Type: list of strings
-    - Example: ['https://yourdomain.com', 'https://www.yourdomain.com']
+* ``org-name: 'Colvert'`` Name of your organization.
 
-- **database**: Database configuration settings.
-    - **engine**: The database backend to use.
-        - Type: string
-        - Example: 'django.db.backends.postgresql'
-    - **host**: The host of the database server.
-        - Type: string
-        - Example: 'dbserver.local' or 'dbcluster\dbinstance' for MS SQL
-    - **port**: The port of the database server.
-        - Type: string
-        - Example: '5432' or ('' | no definition) for MS SQL default port
-    - **dbname**: The name of the database.
-        - Type: string
-        - Example: 'colvert'
-    - **dbuser**: The username to connect to the database.
-        - Type: string
-        - Example: 'colvertuser'
-    - **dbpass**: The password to connect to the database.
-        - Type: string
-        - Example: 'A 5tr0ng P4ssw0rd!'
-    - **driver**: *ONLY FOR MS SQL* - The ODBC driver to use for Microsoft SQL Server.
-        - Type: string
-        - Example: 'ODBC Driver 17 for SQL Server'
+    * *Type*: string
+    * *Example*: ``'Colvert'``
 
-colvert.yml
-===========
+* ``org-logo: 'org_180px.png'`` Path to your organization logo.
 
-`colvert.yml` example:
+    * *Type*: string
+    * *Example*: ``'org_180px.png'``
+
+* ``debug: 'false'`` Enables or disables debug mode.
+
+    * *Type*: string
+    * *Values*: ``'true'`` or ``'false'``
+    * *Default*: ``'false'``
+
+* ``allowed-hosts:`` A list of strings representing the host/domain names that Colvert can serve.
+
+    * *Type*: list of strings
+    * *Example* and *Default*:
 
 .. code-block:: yaml
 
-    # Colvert's configuration
-
-    debug: 'false'
     allowed-hosts:
       - 'yourdomain.com'
       - 'www.yourdomain.com'
+
+.. end:: yaml
+
+.. code-block:: yaml
+
+    allowed-hosts:
+      - '*'
+
+.. end:: yaml
+
+* ``csrf-trusted-origins:`` A list of trusted origins for CSRF protection.
+
+    * *Type*: list of strings
+    * *Example* and *Default*:
+
+.. code-block:: yaml
+
     csrf-trusted-origins:
+      - 'http://yourdomain.com'
       - 'https://yourdomain.com'
+      - 'http://www.yourdomain.com'
       - 'https://www.yourdomain.com'
-    database:
-      engine: 'django.db.backends.sqlite3'
-      dbname: 'db.sqlite3'
 
-By default, Colvert uses the SQLite local database. You can change the database settings to use other databases such as PostgreSQL, MySQL, Oracle or Microsoft SQL Server.
+.. end:: yaml
 
-The `database` section can be set as below according to the database connection you need.
+.. code-block:: yaml
+
+    csrf-trusted-origins:
+      - 'http://'
+      - 'https://'
+
+.. end:: yaml
+
+* ``database:`` Database configuration settings.
+
+    * ``engine:`` The database backend to use.
+
+        * *Type*: string
+        * *Values*: ``'django.db.backends.sqlite3'`` or ``'django.db.backends.postgresql'`` or ``'django.db.backends.mysql'`` or ``'django.db.backends.oracle'`` or ``'sql_server.pyodbc'``
+        * *Default*: ``'django.db.backends.sqlite3'``
+
+    * ``host:`` The host of the database server, applicable for PostgreSQL, MySQL, Oracle and Microsoft SQL Server.
+
+        * *Type*: string
+        * *Example*: ``'dbserver.local'`` or ``'dbcluster\dbinstance'`` for MS SQL
+        * *Default*: ``''``
+        * *Note*: Not specified or empty string means ``localhost``.
+
+    * ``port:`` The port of the database server, applicable for PostgreSQL, MySQL, Oracle and Microsoft SQL Server.
+
+        * *Type*: string
+        * *Example*: ``'5432'``
+        * *Default*: ``''``
+        * *Note*: Not specified or empty string means default port.
+
+    * ``dbname:`` The name of the database.
+
+        * *Type*: string
+        * *Example*: ``'colvert'`` or ``'db.sqlite3'``
+        * *Default*: ``'db.sqlite3'``
+        * *Note*: For SQLite, the database name is the path to the database file.
+
+    * ``dbuser:`` The username to connect to the database.
+
+        * *Type*: string
+        * *Example*: ``'colvertdbuser'``
+        * *Default*: ``''``
+
+    * ``dbuser:`` The username to connect to the database.
+
+        * *Type*: string
+        * *Example*: ``'colvertdbuser'``
+        * *Default*: ``''``
+        * *Note*: For SQLite, the username is not required.
+
+    * ``dbpass:`` The password to connect to the database.
+
+        * *Type*: string
+        * *Example*: ``'A 5tr0ng P4ssw0rd!'``
+        * *Default*: ``''``
+        * *Note*: For SQLite, the password is not required.
+
+    * ``driver:`` The ODBC driver to use for Microsoft SQL Server engine.
+
+        * *Type*: string
+        * *Example*: ``'ODBC Driver 17 for SQL Server'``
+        * *Default*: ``''``
+        * *Note*: Only for Microsoft SQL Server.
+
+.. important::
+
+    When using **Microsoft SQL Server**, ensure you have the correct ODBC driver installed on your system. You can download the ODBC driver from the `Microsoft website <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server>`_.
+
+    More information concerning Microsoft SQL Server connector and drivers at:
+    https://pypi.org/project/django-mssql-backend/
+
+.. admonition:: Testing the connection
+
+    After configuring the settings, you can test the connection by running Django management commands such as ``python manage.py migrate`` to apply migrations to the SQL Server database.
+
+Below are detailed examples about the ``database:`` section that can be set according to the database connection you need.
 
 PostgreSQL
 ----------
@@ -124,26 +197,8 @@ Microsoft SQL Server
     database:
       engine: 'sql_server.pyodbc'
       host: 'yourserver\yourinstance'
-      [port: 'yourinstanceport'] # Not specified or empty string means default port
+      port: 'yourinstanceport'
       dbname: 'yourdbname'
       dbuser: 'yourdbuser'
       dbpass: 'yourdbpassword'
       driver: 'ODBC Driver 17 for SQL Server'
-
-**TODO** Manage all possible version of drivers in docs
-String. ODBC Driver to use ("ODBC Driver 13 for SQL Server", "SQL Server Native Client 11.0", "FreeTDS" etc). Default is "ODBC Driver 13 for SQL Server".
-# Ensure you have the correct ODBC driver installed on your system.
-
-.. important::
-
-    When using **Microsoft SQL Server**, you need to install the ODBC Driver 17 for SQL Server on your system.
-
-    You can download the ODBC Driver 17 for SQL Server from the `Microsoft website <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server>`_.
-
-.. note::
-
-    **Testing the Connection**: After configuring the settings, you can test the connection by running Django management commands such as `python manage.py migrate` to apply migrations to the SQL Server database.
-
-.. seealso::
-
-    More information concerning Microsoft SQL Server connector at https://pypi.org/project/django-mssql-backend/.

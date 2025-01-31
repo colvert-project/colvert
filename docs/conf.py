@@ -72,8 +72,8 @@ with open(os.path.join(COLVERT_DOCS_RELDIR, 'index.rst'), 'w') as f:
 from datetime import datetime
 
 project = 'Colvert'
-author = 'styx0x6 and the Colvert Contributors'
-copyright = f"2024-{datetime.now().year}, {author}"
+author = 'styx0x6 and the Colvert contributors'
+copyright = f"2024-{datetime.now().year} {author}"
 # TODO: version = '.'.join(APP_VERSION.split('.')[:2])
 # TODO: release = APP_VERSION
 

@@ -1,6 +1,6 @@
 """
 Colvert - The Detection Use Case Management Tool
-Copyright (C) 2024  The Colvert Contributors (see README.md / colvert/settings.py)
+Copyright (C) 2024-2025  The Colvert Contributors (see README.md / colvert/settings.py)
 
 Licensed under the EUPL, Version 1.2 only (the "Licence");
 You may not use this work except in compliance with the Licence.

@@ -1,6 +1,6 @@
 """
 Colvert - The Detection Use Case Management Tool
-Copyright (C) 2024  The Colvert Contributors (see README.md / colvert/settings.py)
+Copyright (C) 2024-2025  The Colvert Contributors (see README.md / colvert/settings.py)
 
 Licensed under the EUPL, Version 1.2 only (the "Licence");
 You may not use this work except in compliance with the Licence.
@@ -43,7 +43,6 @@ sys.path.append(os.path.abspath(COLVERT_CORE_APP_RELDIR))
 
 from shutil import copytree
 from jinja2 import Environment, FileSystemLoader
-from datetime import datetime
 
 # ==> sphinx-apidoc
 # TODO: sphinx-apidoc
@@ -70,9 +69,11 @@ with open(os.path.join(COLVERT_DOCS_RELDIR, 'index.rst'), 'w') as f:
 
 # == Project information =================================================
 
+from datetime import datetime
+
 project = 'Colvert'
 author = 'styx0x6 and the Colvert Contributors'
-copyright = f"2024-{datetime.now().year}, {author}."
+copyright = f"2024-{datetime.now().year}, {author}"
 # TODO: version = '.'.join(APP_VERSION.split('.')[:2])
 # TODO: release = APP_VERSION
 

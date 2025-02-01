@@ -3,8 +3,11 @@
 [![Release](https://img.shields.io/badge/dynamic/json?logo=git&logoColor=white&color=blue&label=Release&query=tag_name&url=https%3A%2F%2Fapi.github.com%2Frepos%2Fcolvert-project%2Fcolvert%2Freleases%2Flatest)](https://github.com/colvert-project/colvert/releases/latest)
 [![Documentation](https://img.shields.io/badge/Docs-docs.colvert.io-blue?logo=readthedocs&logoColor=white)](https://docs.colvert.io)
 [![Licence EUPL-1.2](https://img.shields.io/badge/Licence-EUPL--1.2-blue)](LICENCE)
-[![Python 3.12+](https://img.shields.io/badge/Python-3.12+-blue?logo=python&logoColor=white&labelColor=3776ab&color=ffd43b)](https://www.python.org)
-[![Django 5.1+](https://img.shields.io/badge/Django-5.1+-white?logo=django&logoColor=white&labelColor=092e20)](https://www.djangoproject.com)
+
+[![Python 3.12+](https://img.shields.io/badge/Python-3.12+-blue?logo=python&logoColor=white&labelColor=3776ab&color=ffd43b)](https://www.python.org/)
+[![Django 5](https://img.shields.io/badge/Django-5-white?logo=django&logoColor=white&labelColor=092e20)](https://www.djangoproject.com/)
+[![Bootstrap 5](https://img.shields.io/badge/Bootstrap-5-white?logo=bootstrap&logoColor=white&labelColor=7952b3)](https://getbootstrap.com/)
+[![AdminLTE 4](https://img.shields.io/badge/AdminLTE-4-white?logo=bootstrap&logoColor=white&labelColor=grey)](https://adminlte.io/)
 
 **Colvert** is a tool made for cybersecurity teams (CSIRTs / SOCs) and designed to manage their portfolio of _detection use cases_ through their entire lifecycle in the context of **Information Security Event Management**.
 

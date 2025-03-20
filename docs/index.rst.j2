@@ -3,24 +3,28 @@ Welcome to Colvert's documentation!
 ###################################
 
 .. attention::
-
    **This documentation is a work in progress.** Please consider that some parts may be incomplete or contain mistakes.
 
 **Colvert** is a tool made for cybersecurity teams (CSIRTs / SOCs) and designed to manage their portfolio of *detection use cases* through their entire lifecycle in the context of **Information Security Event Management**.
 
 Go to the main repository https://github.com/colvert-project/colvert for an overview of the tool.
 
-* Website: `colvert.io <https://colvert.io/>`_
-* Contact: contact@colvert.io
+* **Website:** https://colvert.io/
+* **Contact:** contact@colvert.io
 
 .. seealso::
-
+   * **Last Release:** https://github.com/colvert-project/colvert/releases/latest
    * **Packages:** https://github.com/orgs/colvert-project/packages
    * **Discussions:** https://github.com/orgs/colvert-project/discussions
    * **Issues Tracker:** https://github.com/colvert-project/colvert/issues
    
    * **Security Policy:** https://github.com/colvert-project/colvert/security/policy
    * **Security Advisories:** https://github.com/colvert-project/colvert/security/advisories
+
+.. admonition:: Contributing
+
+   * `How to contribute? <https://github.com/colvert-project/colvert/blob/main/CONTRIBUTING.md>`_
+   * `Colvert Contributor Code of Conduct <https://github.com/colvert-project/colvert?tab=coc-ov-file>`_
 
 .. admonition:: Licence
 
@@ -30,17 +34,8 @@ Go to the main repository https://github.com/colvert-project/colvert for an over
    languages of the European Union, at:
    https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
 
-Contributing
-============
-
-How to contribute? `See here. <https://github.com/colvert-project/colvert/blob/main/CONTRIBUTING.md>`_
-
-.. seealso::
-
-   `Colvert Contributor Code of Conduct <https://github.com/colvert-project/colvert/blob/main/CODE_OF_CONDUCT.md>`_
-
 Table of Contents
-=================
+*****************
 
 * `Home <index.html>`_
 
@@ -49,23 +44,24 @@ Table of Contents
    :maxdepth: 3
 
    USAGE_Getting_Started.rst
-   USAGE_Configuration.rst
+   USAGE_User_Guide.rst
 
 .. toctree::
    :caption: Developer Documentation
    :maxdepth: 3
 
-   Dev-General.md
-   Software-Architecture.md
-   Docstrings TODO
-   Credits.md
+   DEV_General.rst
+   DEV_Architecture.rst
+   DEV_Model.rst
+   Docstrings <https://docs.colvert.io/>
+   DEV_Credits.rst
 
 .. toctree::
    :caption: Connectors Documentation
    :maxdepth: 3
 
-   Connectors.md
-   How-to-Build-Connectors.md
+   CONN_Architecture.rst
+   CONN_How_to_Build.rst
    {% for file in connectors_docs_files %}
       {{ file }}
    {% endfor %}
@@ -75,4 +71,4 @@ Table of Contents
    :maxdepth: 3
 
    Changelog <https://github.com/colvert-project/colvert/releases>
-   colvert.io <https://colvert.io>
+   colvert.io <https://colvert.io/>

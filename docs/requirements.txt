@@ -1,6 +1,4 @@
 # Jinja2 parser
-Jinja2
-# Markdown parser for Sphinx
-myst-parser
+Jinja2 # Used with Sphinx by default
 # Sphinx's Read the Docs Theme
 sphinx_rtd_theme

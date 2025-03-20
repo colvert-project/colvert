@@ -59,7 +59,7 @@ for conn in os.scandir(os.path.abspath('../connectors')):
             copied_path = copytree(found_connector_docs, os.path.join(os.path.abspath(os.path.join(COLVERT_DOCS_RELDIR, 'connectors')), conn.name), dirs_exist_ok=True)
             # TODO: Manage subdir which is not the case here
             for f in os.listdir(copied_path):
-                if f.endswith('.rst') or f.endswith('.md'):
+                if f.endswith('.rst'):
                     connectors_docs_files.append(os.path.relpath(f, COLVERT_DOCS_RELDIR))
 
 # Create index.rst from Jinja2 template
@@ -80,7 +80,6 @@ copyright = f"2024-{datetime.now().year} {author}"
 # == Sphinx configuration ====================================================
 
 extensions = [
-    'myst_parser',
     'sphinx.ext.githubpages',
     'sphinx.ext.autodoc',
 ]
@@ -94,17 +93,15 @@ numfig = True
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-source_suffix = {
-    '.rst': 'restructuredtext',
-    '.md': 'markdown',
-}
-
 html_theme = 'sphinx_rtd_theme'
+html_theme_options = {
+    'logo_only': True,
+    #'version_selector': True, # TODO not in local build, but will be do in docs.colvert.io
+    'navigation_depth': 3,
+}
 html_title = 'Colvert Documentation'
-with open(os.path.join(COLVERT_DOCS_RELDIR, 'CNAME')) as f: # Get html_baseurl from the "file variable" CNAME
-    html_baseurl = f.readline().strip('\n')
+#html_baseurl = '' # Default base URL for the HTML documentation site
 html_logo = 'static/logo.png' # Copy of colvert_square_192px.png
 html_favicon = 'static/favicon.png' # Copy of colvert_square_16px.png
-#html_output_encoding = 'utf-8'
+html_output_encoding = 'utf-8' # UTF-8 encoding is the default value
 html_static_path = ['static']
-html_show_sourcelink = False

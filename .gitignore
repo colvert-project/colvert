@@ -62,7 +62,7 @@ db.sqlite3-journal
 .scrapy
 
 # Sphinx documentation build dir & files
-docs/_build*
+docs/_build/
 
 # PyBuilder
 .pybuilder/
@@ -146,6 +146,16 @@ cython_debug/
 
 # DevDb (Visual Studio Code extension)
 .devdbrc
+
+# Colvert - npm
+node_modules/
+package-lock.json
+
+# Colvert docs
+docs/index.rst
+
+# Colvert collected staticfiles
+/static/
 
 # Colvert specific
 colvert.yml

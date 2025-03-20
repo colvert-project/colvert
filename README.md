@@ -1,7 +1,7 @@
 # Colvert
 
 [![Release](https://img.shields.io/badge/dynamic/json?logo=git&logoColor=white&color=blue&label=Release&query=tag_name&url=https%3A%2F%2Fapi.github.com%2Frepos%2Fcolvert-project%2Fcolvert%2Freleases%2Flatest)](https://github.com/colvert-project/colvert/releases/latest)
-[![Documentation](https://img.shields.io/badge/Docs-docs.colvert.io-blue?logo=readthedocs&logoColor=white)](https://docs.colvert.io)
+[![Documentation](https://img.shields.io/badge/Docs-docs.colvert.io-blue?logo=readthedocs&logoColor=white)](https://docs.colvert.io/)
 [![Licence EUPL-1.2](https://img.shields.io/badge/Licence-EUPL--1.2-blue)](LICENCE)
 
 [![Python 3.12+](https://img.shields.io/badge/Python-3.12+-blue?logo=python&logoColor=white&labelColor=3776ab&color=ffd43b)](https://www.python.org/)
@@ -16,7 +16,7 @@
 ### Purpose
 
 **Colvert** manage the portfolio of _detection use cases_ with the possibility to document and follow-up use cases development, improvement and implementation; testing status; risk coverage compared to well-known security threats based on multiple contextual data sources; related preventive controls; and instructions for analysts triage, qualification, and correlation as playbooks and Standard Operating Procedures (SOPs).
-It is designed to be used in the context of the _Service Area_ **Information Security Event Management** / _Service_ **Monitoring and Detection** / _Function_ **Detection Use Case Management** as defined in the [CSIRT Services Framework Version 2.1](https://www.first.org/standards/frameworks/csirts/csirt_services_framework_v2.1) from the [FIRST](https://www.first.org):
+It is designed to be used in the context of the _Service Area_ **Information Security Event Management** / _Service_ **Monitoring and Detection** / _Function_ **Detection Use Case Management** as defined in the [CSIRT Services Framework Version 2.1](https://www.first.org/standards/frameworks/csirts/csirt_services_framework_v2.1) from the [FIRST](https://www.first.org/):
 
 > _**Purpose:**_ Manage the portfolio of detection use cases through their entire lifecycle.
 >
@@ -59,8 +59,8 @@ That's it.
 
 ### Links
 
-* **Website:** [colvert.io](https://colvert.io)
-* **Documentation:** [docs.colvert.io](https://docs.colvert.io)
+* **Website:** [colvert.io](https://colvert.io/)
+* **Documentation:** [docs.colvert.io](https://docs.colvert.io/)
 * **Git Repository:** `git clone https://github.com/colvert-project/colvert.git`
 * **Last Release:** [colvert/releases/latest](https://github.com/colvert-project/colvert/releases/latest)
 * **Packages:** [colvert-project/packages](https://github.com/orgs/colvert-project/packages)
@@ -69,7 +69,7 @@ That's it.
 
 Changelog details are available on the [releases](https://github.com/colvert-project/colvert/releases) page.
 
-All topics about installation / deployment / usage / design / architecture / contribution / etc. can be found in [**documentation**](https://docs.colvert.io).
+All topics about installation / deployment / usage / design / architecture / contribution / etc. can be found in [**documentation**](https://docs.colvert.io/).
 
 ## Security
 
@@ -81,21 +81,24 @@ All topics about installation / deployment / usage / design / architecture / con
 * Feel free to start a topic in discussions part: [colvert-project/discussions](https://github.com/orgs/colvert-project/discussions)
 * You can also contact project maintainers via mail: <contact@colvert.io>
 
+## Contributing
+
+* [How to contribute?](https://github.com/colvert-project/colvert/blob/main/CONTRIBUTING.md)
+* [Colvert Contributor Code of Conduct](https://github.com/colvert-project/colvert?tab=coc-ov-file)
+
 ## Contributors
 
 ### Author & Project Maintainer
 
-* **styx0x6** <<https://github.com/styx0x6>>
-
-[![styx0x6](https://github.com/styx0x6.png?size=40)](https://github.com/styx0x6)
+* **Styx0x6** <<[github.com/styx0x6](https://github.com/styx0x6)>>
 
 ### Contributing Developers
 
-.
+* [Contributors Graph](https://github.com/colvert-project/colvert/graphs/contributors)
 
 ### Sponsors
 
-[![styx0x6](https://github.com/styx0x6.png?size=40)](https://github.com/styx0x6)
+[![styx0x6](https://github.com/styx0x6.png?size=30)](https://github.com/styx0x6)
 
 ## Licence
 
@@ -120,4 +123,4 @@ languages of the European Union, at:
 
 ## Credits
 
-Credits are listed in [docs/Credits](https://docs.colvert.io/Credits.html).
+Credits are listed in [docs/Credits](https://docs.colvert.io/DEV_Credits.html).

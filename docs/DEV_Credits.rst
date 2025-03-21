@@ -5,8 +5,8 @@ Credits
 .. warning::
     *This document is a work in progress.*
 
-    **TODO** - Finish the list of third-party libraries and tools used in **Colvert**.
-    **TODO** - Use Jinja2 in DEV_Credits.rst to automatically set the year of the copyright (2024 => 2025).
+    | **TODO** - Finish the list of third-party libraries and tools used in **Colvert**.
+    | **TODO** - Use Jinja2 in DEV_Credits.rst to automatically set the year of the copyright (2024 => 2025).
 
 **Colvert** is using and bundling third-party libraries and tools, and below are their associated licensing terms:
 

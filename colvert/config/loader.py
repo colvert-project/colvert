@@ -18,9 +18,10 @@ from django.core.management.utils import get_random_secret_key
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+DEFAULTS_DIR = os.path.join(BASE_DIR, 'colvert', 'config', 'defaults')
 
 # Configuration file paths
-TEMPLATE_PATH = os.path.join(BASE_DIR, 'colvert.template.yml')
+TEMPLATE_PATH = os.path.join(DEFAULTS_DIR, 'colvert.template.yml')
 CONFIG_YML_PATH = os.path.join(BASE_DIR, 'colvert.yml')
 CONFIG_YAML_PATH = os.path.join(BASE_DIR, 'colvert.yaml')
 SECRET_KEY_PATH = os.path.join(BASE_DIR, 'SECRET_KEY')
@@ -46,7 +47,7 @@ class ColvertConfig:
 
         # Default configuration settings
         self._yml_org_name = 'Colvert'
-        self._yml_org_logo = 'org_180px.png'
+        self._yml_org_logo = os.path.join(DEFAULTS_DIR, 'org_180px.png')
         self._yml_debug = False
         self._yml_allowed_hosts = ['*']
         self._yml_csrf_trusted_origins = ['http://', 'https://']
@@ -63,7 +64,11 @@ class ColvertConfig:
                 if key == 'org-name':
                     self._yml_org_name = str(value)
                 elif key == 'org-logo':
-                    self._yml_org_logo = str(value)
+                    # Given file if it exists
+                    if os.path.exists(os.path.join(BASE_DIR, str(value))):
+                        self._yml_org_logo = os.path.join(BASE_DIR, str(value))
+                    else:
+                        self._yml_org_logo = os.path.join(DEFAULTS_DIR, 'org_180px.png')
                 elif key == 'debug':
                     self._yml_debug = str(value).lower() == 'true'
                 elif key == 'allowed-hosts':

@@ -34,7 +34,7 @@ Git Clone
 PyPI
 ----
 
-* Unix/macOS:
+* Linux/macOS/Unix:
 
 .. code-block:: shell
 
@@ -91,12 +91,12 @@ Offline
 Configuration File ``colvert.yml``
 ==================================
 
-If it doesn't already exist (as at the first run), Colvert will create ``colvert.yml`` configuration file with defaults settings.
+If it doesn't already exist (as at the first run), Colvert will create ``colvert.yml`` configuration file with defaults settings (taken from ``colvert/config/defaults/colvert.template.yml``).
 
 You can modify the settings in ``colvert.yml`` to suit your requirements.
 
 .. note::
-    You can also reset the configuration to the default settings by deleting ``colvert.yml`` and restarting the application, or by copying ``colvert.template.yml`` to ``colvert.yml``.
+    You can also reset the configuration to the default settings by deleting ``colvert.yml`` and restarting the application, or by copying ``colvert/config/defaults/colvert.template.yml`` to ``colvert.yml``.
 
 Configuration
 -------------
@@ -114,7 +114,9 @@ Configuration
 * ``org-logo: 'org_180px.png'`` Path to your organization logo.
 
     * *Type*: string
-    * *Example*: ``'org_180px.png'``
+    * *Default*: ``'org_180px.png'``, which is the default logo provided from ``colvert/config/defaults/`` path folder.
+    * *Note*: You can replace the default logo with your organization one by setting up the path to your logo. Better placed in the root directory. Path is calculated from the root directory. 180px is the recommended size. Empty value will use the default logo.
+    * *Example*: ``'myorg.png'``
 
 * ``debug: 'false'`` Enables or disables debug mode.
 

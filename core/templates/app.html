@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block b_body_attributes %} class="layout-fixed sidebar-expand-lg bg-body-tertiary"{% endblock %}
+
+{% block b_main %}
+<div class="app-wrapper">
+  <nav class="app-header navbar navbar-expand bg-body">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button" aria-label="Toggle sidebar">
+            <i class="bi bi-list"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        {% if request.user.is_authenticated %}
+        <li class="nav-item me-2 d-flex align-items-center text-body-secondary small">{{ request.user.username }}</li>
+        <li class="nav-item">
+          <form method="post" action="{% url 'signout' %}" data-ajax-auth="logout-form" data-api-endpoint="{% url 'signout_api' %}">
+            {% csrf_token %}
+            <button class="btn btn-outline-secondary btn-sm" type="submit">Sign out</button>
+          </form>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
+  <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+    <div class="sidebar-brand">
+      <a href="{% url 'dashboards' %}" class="brand-link">
+        <span class="brand-text fw-light">{{ pl_short_name|default:'Colvert' }}</span>
+      </a>
+    </div>
+    <div class="sidebar-wrapper">
+      <nav class="mt-2">
+        <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="{% url 'dashboards' %}" class="nav-link">
+              <i class="nav-icon bi bi-speedometer"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="app-main">
+    <div class="app-content-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <h3 class="mb-0">{% block app_page_title %}Dashboard{% endblock %}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-content">
+      <div class="container-fluid">
+        {% block app_content %}{% endblock %}
+      </div>
+    </div>
+  </main>
+
+  <footer class="app-footer text-body-secondary">
+    <strong>{{ pl_footer|default:pl_powered_by }}</strong>
+  </footer>
+</div>
+{% endblock %}
+
+{% block b_body_after_scripts %}
+<script type="text/javascript" src="{% static 'js/auth.js' %}"></script>
+{% endblock %}

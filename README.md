@@ -41,6 +41,14 @@ To respond to the needs explained above, **Colvert** offers the following key fe
     * Add _Custom Lists_ (Whitelists, Thresholds, Scope, etc.).
     * Attach external documents or references to.
 
+### Authentication UI
+
+The web UI uses **Django built-in authentication** with an **AdminLTE 4** responsive layout:
+
+* `/signin/` renders the login page and supports normal form submission.
+* `/dashboards/` is protected and requires an authenticated session.
+* `/api/auth/signin/` and `/api/auth/signout/` expose JSON endpoints used by vanilla JS progressive enhancement for AJAX flows (CSRF-protected).
+
 ### Roadmap
 
 * Scoring System.

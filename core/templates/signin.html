@@ -2,37 +2,47 @@
 {% load static %}
 
 {% block b_head %}
-		<link rel="stylesheet" href="{% static 'css/signin.style.css' %}">
+<link rel="stylesheet" href="{% static 'css/signin.style.css' %}">
 {% endblock %}
 
-{% block b_body_attributes %} class="text-center"{% endblock %}
+{% block b_body_attributes %} class="login-page bg-body-secondary"{% endblock %}
 
 {% block b_main %}
-		<main class="form-signin">
-			<form action="{{ pl_signin_base_route }}" method="POST">
-				<img class="mb-4" src="{% static 'img/colvert_square_180px.png' %}" alt="Colvert Logo" width="72" height="72">
-				<h1 class="h3 mb-3 fw-normal">Sign in <b>{{ pl_signin_short_name }}</b></h1>
-				{% if pl_signin_msg %}
-				<div class="alert alert-danger alert-dismissible fade show" role="alert">
-					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-					{{ pl_signin_msg }}
-				</div>
-				{% endif %}
-				<div class="form-floating">
-					<input type="text" class="form-control" id="floatingInput" name="username" placeholder="Username">
-					<label for="floatingInput">Username</label>
-				</div>
-				<div class="form-floating">
-					<input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
-					<label for="floatingPassword">Password</label>
-				</div>
-				<div class="checkbox mb-3">
-					<label>
-						<input type="checkbox" value="remember-me"> Remember me
-					</label>
-				</div>
-				<button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-				<p class="mt-5 mb-3 text-muted small">{{ pl_signin_footer|safe }}</p>
-			</form>
-		</main>
+<div class="login-box" data-api-endpoint="{{ pl_signin_api_route }}">
+  <div class="login-logo">
+    <img src="{% static 'img/colvert_square_180px.png' %}" alt="Colvert Logo" width="72" height="72">
+    <h1 class="h4 mt-2">Sign in <b>{{ pl_signin_short_name }}</b></h1>
+  </div>
+
+  <div class="card card-outline card-primary">
+    <div class="card-body login-card-body">
+      {% if pl_signin_msg %}
+      <div class="alert alert-danger" role="alert" id="signin-alert">{{ pl_signin_msg }}</div>
+      {% else %}
+      <div class="alert alert-danger d-none" role="alert" id="signin-alert"></div>
+      {% endif %}
+
+      <form id="signin-form" action="{{ pl_signin_base_route }}" method="post" data-api-endpoint="{{ pl_signin_api_route }}">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="id_username" name="username" placeholder="Username" required autofocus>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" id="id_password" name="password" placeholder="Password" required>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-primary w-100" type="submit">Sign in</button>
+          </div>
+        </div>
+      </form>
+
+      <p class="mt-3 mb-0 text-muted small text-center">{{ pl_signin_footer }}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block b_body_after_scripts %}
+<script type="text/javascript" src="{% static 'js/auth.js' %}"></script>
 {% endblock %}

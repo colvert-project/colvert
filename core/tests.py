@@ -6,8 +6,7 @@ from django.urls import reverse
 class AuthenticationViewsTests(TestCase):
     def setUp(self):
         self.user_password = "P@ssw0rd!"
-        pwd_key = "pass" + "word"
-        create_kwargs = {"username": "integration-user", pwd_key: self.user_password}
+        create_kwargs = {"username": "integration-user", "password": self.user_password}
         self.user = get_user_model().objects.create_user(**create_kwargs)
 
     def test_signin_page_renders(self):
@@ -62,7 +61,7 @@ class AuthenticationViewsTests(TestCase):
         self.assertEqual(response.json()["redirect_url"], reverse("dashboards"))
 
     def test_signout_api_clears_authenticated_session(self):
-        login_kwargs = {"username": self.user.username, "pass" + "word": self.user_password}
+        login_kwargs = {"username": self.user.username, "password": self.user_password}
         self.client.login(**login_kwargs)
 
         response = self.client.post(
